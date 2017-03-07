@@ -4,11 +4,11 @@ src_dir=src/
 CC=gcc
 CFLAGS=-Wall -lSDL2_image -lSDL2  -g
 LDFLAGS=`sdl2-config --cflags --libs` -lSDL2_ttf -lSDL2_gfx -g
-EXEC=$(bin_dir)GSA.exe
+EXEC=$(bin_dir)FARM.exe
 
 all: $(EXEC)
 
-$(bin_dir)GSA.exe: $(obj_dir)BDD.o $(obj_dir)Camera.o $(obj_dir)Couleur.o $(obj_dir)ImageBMP.o $(obj_dir)ReconnaissanceV.o $(obj_dir)Sdl_fenetres.o $(obj_dir)Sdl_init.o $(obj_dir)Sdl_main.o $(obj_dir)Stock.o
+$(bin_dir)FARM.exe: $(obj_dir)database.o
 	$(CC) -o $@ $^ $(LDFLAGS)
 
 $(obj_dir)%.o: $(src_dir)%.c
@@ -22,7 +22,7 @@ clean:
 	rm -f $(obj_dir)* $(bin_dir)*
 
 start:
-	./bin/GSA.exe
+	./$(EXEC)
 
 forceMaj:
 	git pull && make clean && make && make start
