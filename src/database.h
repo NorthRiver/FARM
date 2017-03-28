@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <winsock.h>
-#include <MYSQL/mysql.h>
+#ifdef _WIN32
+#include <Winsock2.h>
+#endif
+
+#include <mysql.h>
 
 /*
 	@brief Ouvre une connection a la base de donnees a traver la structure mysql en parametre
