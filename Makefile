@@ -2,7 +2,7 @@ obj_dir=obj/
 bin_dir=bin/
 src_dir=src/
 CC=gcc
-CFLAGS=-Wall -lSDL2_image -lSDL2  -g -I/usr/include/mysql
+CFLAGS=-Wall -g -I/usr/include/mysql
 LDFLAGS=`mysql_config --cflags --libs` -g
 EXEC=$(bin_dir)FARM.exe
 
