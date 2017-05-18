@@ -12,8 +12,8 @@ char * readFile(char * fileName){
 	file = fopen( fileName , "r");
 	char[12] res;
 	fscanf(file, "%s", res);
+	
 	return res;
-
 }
 
 
@@ -56,8 +56,8 @@ int main(void) {
 
     if (pid == 0) {
       /* Envoi de donnees au client */
-    	char[12] pos;
-    	char[12] verfiedPos;
+    	char * pos;
+    	char * verfiedPos;
 
     	pos = readFile("../dataPosition/position.txt");
     	verfiedPos = readFile("../dataPosition/verifiedPosition.txt");
