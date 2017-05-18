@@ -11,10 +11,14 @@ int main(void){
 
 	char *tok = strtok(res, "/");
     printf("ipRobot = %s\n", tok);
-    char *idbut = tok;
+    char *ipR = tok;
+
     tok = strtok(NULL, "/");
+    char *posR = tok;
     printf("position = %s\n", tok);
+    
     tok = strtok(NULL, "/");
+    char *vPosR = tok;
     printf("positions verifiées = %s\n", tok);
 
 	return 0;
