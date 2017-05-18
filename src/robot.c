@@ -49,8 +49,8 @@ void setIp(Robot * r, char * nip){
 }
 
 int main(void){
-	Robot r = malloc(sizeof(Robot));
-	r->ip="162.38.111.96";
+	Robot r;
+	&r->ip="162.38.111.96";
 	return 0;
 }
 
