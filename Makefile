@@ -8,7 +8,7 @@ EXEC=$(bin_dir)FARM.exe
 
 all: $(EXEC)
 
-$(bin_dir)FARM.exe: $(obj_dir)robot.o socket.o
+$(bin_dir)FARM.exe: $(obj_dir)robot.o $(obj_dir)socket.o $(obj_dir)main.o
 	$(CC) -o $@ $^ $(LDFLAGS)
 
 $(obj_dir)%.o: $(src_dir)%.c

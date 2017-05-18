@@ -48,15 +48,9 @@ void setIp(Robot * r, char * nip){
 	strcpy(r->ip,nip);
 }
 
-int main(void){
-	Robot r;
-	setIp(&r,"162.38.111.96");
-	return 0;
-}
-
 void majRobot(Robot * r[6]){
 	int i=0;
-	for(i; i<6; i++){
+	/*for(i; i<6; i++){
 		//TODO Fonction socket sur r[i]
 		/*    //décomposer les données en tokens
     char *tok = strtok(buffer, "/");
@@ -66,5 +60,6 @@ void majRobot(Robot * r[6]){
     printf("IDBALLON = %s\n", tok);
     tok = strtok(NULL, "/");
     printf("COULBALLON = %s\n", tok);*/
-	}
+	//}
+
 }
