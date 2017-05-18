@@ -1,7 +1,7 @@
 #include "main.h"
 
 
-char adServeur [15] = "localhost"; // A completer avec votre ip
+char adServeur [15] = "monIp"; // A completer avec votre ip
 
 void proc_exit(int sig) {
   wait();
