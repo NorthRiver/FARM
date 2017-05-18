@@ -28,7 +28,7 @@ char * socketRecupRobot(char * ip) {
     sin.sin_addr.s_addr = inet_addr(ip);
     sin.sin_family = AF_INET;
     sin.sin_port = htons(PORT);
-   
+   	printf("Tentative de connexion\n");
     /* Tentative de connexion au serveur */
     connect(sock, (struct sockaddr*)&sin, sizeof(sin));
     printf("\nConnexion a %s sur le port %d\n", inet_ntoa(sin.sin_addr),htons(sin.sin_port));
