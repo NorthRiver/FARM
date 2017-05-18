@@ -50,7 +50,7 @@ void setIp(Robot * r, char * nip){
 
 int main(void){
 	Robot r;
-	&r->ip="162.38.111.96";
+	setIp(&r,"162.38.111.96");
 	return 0;
 }
 
