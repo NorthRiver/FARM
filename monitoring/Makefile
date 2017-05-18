@@ -8,7 +8,7 @@ EXEC=$(bin_dir)monitoringServer.farm
 
 all: $(EXEC)
 
-$(bin_dir)FARM.exe: $(obj_dir)database.o
+$(bin_dir)monitoringServer.farm: $(obj_dir)main.o
 	$(CC) -o $@ $^ $(LDFLAGS)
 
 $(obj_dir)%.o: $(src_dir)%.c
