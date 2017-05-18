@@ -45,7 +45,7 @@ void setBallon(Robot * r, int val){
 }
 
 void setIp(Robot * r, char * nip){
-	r->ip = nip;
+	strcpy(r->ip,nip);
 }
 
 int main(void){
