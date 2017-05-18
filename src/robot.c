@@ -1,22 +1,4 @@
 #include "robot.h"
-/**
-* @struct Robot Contient toutes les infos des robots
-* @param ip l'ip du robot
-* @param posx La postion en X du robot
-* @param posY la position en y du robot
-* @param verifiedPosX La position verifiée du robot en X
-* @param verifiedPosY la position verifiée du robot en Y
-* @param ballon 1 si a le ballon, 0 sinon
-*/
-typedef struct RobotV
-{
-  char ip[10];
-  int posX;
-  int posY;
-  int verifiedPosX;
-  int verifiedPosY;
-  int ballon;
-} Robot;
 
 int getPosX(Robot * r){
 	return r.posX;
