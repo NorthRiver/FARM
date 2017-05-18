@@ -10,7 +10,7 @@ void proc_exit(int sig) {
 char * readFile(char * fileName){
 	FILE * file;
 	file = fopen( fileName , "r");
-	char[12] res ="";
+	char res[12];
 	fscanf(file, "%s", res);
 	
 	return res;
