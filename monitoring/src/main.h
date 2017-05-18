@@ -12,7 +12,8 @@
 
 int main(void);
 
-/** Retourne la chaine de caractere lu dans le fichier passée en parametre
+/** 
+* @brief Retourne la chaine de caractere lu dans le fichier passée en parametre
 * @param fileName La nom du fichier a lire
 * @return la chaine lu
 */ 

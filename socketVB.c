@@ -29,12 +29,7 @@ void close_exit (int n) {
 
 int main(void) {
 
-    typedef struct PositionJ
-    {
-      char[10] ip;
-      int x;
-      int y;
-    } PositionJ;
+
 
 	
     // COMMUNICATION SOCKET
