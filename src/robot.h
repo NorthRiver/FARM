@@ -1,4 +1,6 @@
 
+#include "socket.h"
+
 /**
 * @struct Robot Contient toutes les infos des robots
 * @param ip l'ip du robot
@@ -95,3 +97,9 @@ void setBallon(Robot * r, int val);
 * @param nip Nouvelle ip
 */
 void setIp(Robot * r, char * nip);
+
+/**
+* @brief Met a jour les données de chaques robots placés dans ce tableau de robots
+* @param r Un tableau d'adresse de robots
+*/
+void majRobot(Robot * r[6]);

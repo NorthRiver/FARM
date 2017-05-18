@@ -47,3 +47,23 @@ void setBallon(Robot * r, int val){
 void setIp(Robot * r, char * nip){
 	r.ip = nip;
 }
+
+void main(void){
+	Robot r = malloc(sizeof(Robot));
+	r.ip="162.38.11.96"
+	return 0;
+}
+
+void majRobot(Robot * r[6]){
+	for(int i; i<6; i++){
+		//TODO Fonction socket sur r[i]
+		/*    //décomposer les données en tokens
+    char *tok = strtok(buffer, "/");
+    printf("IDROBOT = %s\n", tok);
+    char *idbut = tok;
+    tok = strtok(NULL, "/");
+    printf("IDBALLON = %s\n", tok);
+    tok = strtok(NULL, "/");
+    printf("COULBALLON = %s\n", tok);*/
+	}
+}
