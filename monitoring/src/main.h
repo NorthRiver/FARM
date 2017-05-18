@@ -10,7 +10,7 @@
 #include <signal.h>
 #define PORT 10000
 
-int main(int argc,char* args[]);
+int main(void);
 
 /** Retourne la chaine de caractere lu dans le fichier passée en parametre
 * @param fileName La nom du fichier a lire
