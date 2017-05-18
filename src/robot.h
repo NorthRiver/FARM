@@ -10,7 +10,7 @@
 */
 typedef struct Robot
 {
-  char[10] ip;
+  char ip[10];
   int posX;
   int posY;
   int verifiedPosX;
@@ -92,6 +92,6 @@ void setBallon(Robot * r, int val);
 
 /** @brief Get/Set
 * @param r Le robot
-* @param ip Nouvelle ip
+* @param nip Nouvelle ip
 */
-void setIp(Robot * r, char * ip);
+void setIp(Robot * r, char * nip);
