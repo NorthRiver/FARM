@@ -8,7 +8,7 @@
 * @param verifiedPosY la position verifiée du robot en Y
 * @param ballon 1 si a le ballon, 0 sinon
 */
-typedef struct Robot
+typedef struct RobotV
 {
   char ip[10];
   int posX;
