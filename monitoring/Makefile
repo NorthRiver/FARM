@@ -3,7 +3,7 @@ bin_dir=bin/
 src_dir=src/
 CC=gcc
 CFLAGS=-Wall -g
-LDFLAGS=`--libs` -g
+LDFLAGS=-g
 EXEC=$(bin_dir)monitoringServer.farm
 
 all: $(EXEC)
