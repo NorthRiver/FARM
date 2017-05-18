@@ -1,61 +1,62 @@
 #include "robot.h"
 
 int getPosX(Robot * r){
-	return r->posX;
+	return r.posX;
 }
 
 int getPosY(Robot * r){
-	return r->posY;
+	return r.posY;
 }
 
 int getVerifiedPosX(Robot * r){
-	return r->verifiedPosX;
+	return r.verifiedPosX;
 }
 
 int getVerifiedPosY(Robot * r){
-	return r->verifiedPosY;
+	return r.verifiedPosY;
 }
 
 int getBallon(Robot * r){
-	return r->ballon;
+	return r.ballon;
 }
 
 char * getIp(Robot * r){
-	return r->ip;
+	return r.ip;
 }
 
 void setPosX(Robot * r, int val){
-	r->posX = val;
+	r.posX = val;
 }
 
 void setPosY(Robot * r, int val){
-	r->posY = val;
+	r.posY = val;
 }
 
 void setVerifiedPosX(Robot * r, int val){
-	r->verifiedPosX = val;
+	r.verifiedPosX = val;
 }
 
 void setVerifiedPosY(Robot * r, int val){
-	r->verifiedPosX = val;
+	r.verifiedPosX = val;
 }
 
 void setBallon(Robot * r, int val){
-	r->ballon = val;
+	r.ballon = val;
 }
 
 void setIp(Robot * r, char * nip){
-	r->ip = nip;
+	r.ip = nip;
 }
 
 int main(void){
 	Robot r = malloc(sizeof(Robot));
-	r->ip="162.38.11.96";
+	r.ip="162.38.11.96";
 	return 0;
 }
 
 void majRobot(Robot * r[6]){
-	for(int i; i<6; i++){
+	int i=0;
+	for(i; i<6; i++){
 		//TODO Fonction socket sur r[i]
 		/*    //décomposer les données en tokens
     char *tok = strtok(buffer, "/");
