@@ -180,6 +180,8 @@ int main(void) {
   char fich[100];
   printf("Endroit ou poster : ");
   fgets(fich, 100, stdin);
+  pos = strchr(fich, '\n');
+  *pos = '\0';
   char data[] = "{\"data\":\"onche\"}";
   PostData(host,port,fich,data);
   
