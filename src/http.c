@@ -148,7 +148,7 @@ void PostData(char host[], int port, char file[], char data[]){
     else{
       break;
     }
-  }/
+  }
 
   /* Fermeture de la socket client */
   close(sock);
