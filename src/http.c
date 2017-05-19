@@ -179,6 +179,7 @@ int main(void) {
   
   char fich[100];
   printf("Endroit ou poster : ");
+  scanf("%*[^\n]");
   fgets(fich, 100, stdin);
   pos = strchr(fich, '\n');
   *pos = '\0';
