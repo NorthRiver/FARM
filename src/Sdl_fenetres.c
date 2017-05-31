@@ -29,14 +29,14 @@ int menu() {
 
 	int larg = textMap->w;
 	int haut = textMap->h;
-	pos.x=cadreGrille.x + ((cadreGrille.w-larg)/2); pos.y=cadreGrille.y -10;
+	pos.x=cadreGrille.x + ((cadreGrille.w-larg)/2); pos.y=cadreGrille.y -20;
 	SDL_BlitSurface(textMap,NULL,screenSurface,&pos);
 
 	textScore = TTF_RenderUTF8_Blended(getpolice(), "Score", couleurBlanc);
 
 	larg = textMap->w;
 	haut = textMap->h;
-	pos.x=pos.x + 370;
+	pos.x=pos.x + 370;pos.y=pos.y + 20;
 	SDL_BlitSurface(textScore,NULL,screenSurface,&pos);
 
 	textTime = TTF_RenderUTF8_Blended(getpolice(), "Time", couleurBlanc);
