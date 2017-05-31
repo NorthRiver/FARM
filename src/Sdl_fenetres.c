@@ -5,7 +5,8 @@
 
 int menu() {
 	SDL_Surface* screenSurface;
-	SDL_Surface* texteAjout;
+	SDL_Surface* textMap;
+	SDL_Surface* textScore;
 	SDL_Rect pos;
 
 	// Fond d'écran
@@ -19,17 +20,30 @@ int menu() {
 	SDL_Rect cadreGrille; SDL_Rect buttInv;
 	cadreGrille.x=40; cadreGrille.y=40; cadreGrille.w=400; cadreGrille.h=400;
 
-	SDL_FillRect(screenSurface,&cadreGrille,SDL_MapRGB(screenSurface->format,49, 36, 104));
+	SDL_FillRect(screenSurface,&cadreGrille,SDL_MapRGB(screenSurface->format,32, 23, 71));
 
-	// Texte boutons
+	// Texte
 	SDL_Color couleurBlanc = {255, 255, 255};
-	texteAjout = TTF_RenderUTF8_Blended(getpolice(), "Map", couleurBlanc);
+	textMap = TTF_RenderUTF8_Blended(getpolice(), "Map", couleurBlanc);
 
-	int larg = texteAjout->w;
-	int haut = texteAjout->h;
-	pos.x=cadreGrille.x + ((cadreGrille.w-larg)/2); pos.y=cadreGrille.y + ((cadreGrille.h-haut)/2);
+	int larg = textMap->w;
+	int haut = textMap->h;
+	pos.x=cadreGrille.x + ((cadreGrille.w-larg)/2); pos.y=cadreGrille.y -10;
+	SDL_BlitSurface(textMap,NULL,screenSurface,&pos);
 
-	SDL_BlitSurface(texteAjout,NULL,screenSurface,&pos);
+	textScore = TTF_RenderUTF8_Blended(getpolice(), "Score", couleurBlanc);
+
+	larg = textMap->w;
+	haut = textMap->h;
+	pos.x=pos.x + 370;
+	SDL_BlitSurface(textScore,NULL,screenSurface,&pos);
+
+	textTime = TTF_RenderUTF8_Blended(getpolice(), "Time", couleurBlanc);
+
+	larg = textMap->w;
+	haut = textMap->h;
+	pos.y=pos.y + 180;
+	SDL_BlitSurface(textTime,NULL,screenSurface,&pos);
 
 
 	SDL_UpdateWindowSurface(getwindow());
