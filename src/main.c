@@ -16,7 +16,7 @@ int main(void){
     tok = strtok(NULL, "/");
     char *posR = tok;
     printf("position = %s\n", tok);
-    
+
     tok = strtok(NULL, "/");
     char *vPosR = tok;
     printf("positions verifiées = %s\n", tok);

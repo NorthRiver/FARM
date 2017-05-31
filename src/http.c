@@ -23,21 +23,21 @@ void Error(char *mess)
 void GetData(char host[], int port, char file[]){
   /* Calcul de l'IP de l'hote */
   struct hostent *hostinfo;
-  hostinfo = gethostbyname(host); 
+  hostinfo = gethostbyname(host);
   if (hostinfo) {
     struct in_addr  **pptr;
     pptr = (struct in_addr **)hostinfo->h_addr_list;
     printf("Adresse IP de l'hote : %s\n",inet_ntoa(**(pptr)));
-  } 
+  }
 
   /* Creation de la socket */
   if ( (sock = socket(AF_INET, SOCK_STREAM, 0)) <0 )
     Error("can't create socket");
- 
+
   /* Configuration de la connexion */
 
   struct sockaddr_in sin;
- 
+
   sin.sin_addr = *(struct in_addr *) hostinfo->h_addr;
   sin.sin_family = AF_INET;
   if ( (sin.sin_port = htons(port)) == 0)
@@ -49,7 +49,7 @@ void GetData(char host[], int port, char file[]){
   else printf("Connexion a %s sur le port %d\n", inet_ntoa(sin.sin_addr),
          htons(sin.sin_port));
 
-  
+
     //Envoi de donnees au serveur
   char buffer[1024] = "GET ";
   strcat(buffer, file);
@@ -61,8 +61,8 @@ void GetData(char host[], int port, char file[]){
 
   // TO DO : test whether this suceeds or Erorr("write error on socket")
    send(sock, buffer, strlen(buffer), 0);
-  
-   
+
+
 
 
   /* Reception de donnees du serveur */
@@ -83,27 +83,27 @@ void GetData(char host[], int port, char file[]){
   /* Fermeture de la socket client */
   close(sock);
 
-  
+
 }
 
 void PostData(char host[], int port, char file[], char data[]){
   /* Calcul de l'IP de l'hote */
   struct hostent *hostinfo;
-  hostinfo = gethostbyname(host); 
+  hostinfo = gethostbyname(host);
   if (hostinfo) {
     struct in_addr  **pptr;
     pptr = (struct in_addr **)hostinfo->h_addr_list;
     printf("Adresse IP de l'hote : %s\n",inet_ntoa(**(pptr)));
-  } 
+  }
 
   /* Creation de la socket */
   if ( (sock = socket(AF_INET, SOCK_STREAM, 0)) <0 )
     Error("can't create socket");
- 
+
   /* Configuration de la connexion */
 
   struct sockaddr_in sin;
- 
+
   sin.sin_addr = *(struct in_addr *) hostinfo->h_addr;
   sin.sin_family = AF_INET;
   if ( (sin.sin_port = htons(port)) == 0)
@@ -115,7 +115,7 @@ void PostData(char host[], int port, char file[], char data[]){
   else printf("Connexion a %s sur le port %d\n", inet_ntoa(sin.sin_addr),
          htons(sin.sin_port));
 
-  
+
     //Envoi de donnees au serveur
   char buffer[1024] = "POST ";
   strcat(buffer, file);
@@ -130,8 +130,8 @@ void PostData(char host[], int port, char file[], char data[]){
 
   // TO DO : test whether this suceeds or Erorr("write error on socket")
    send(sock, buffer, strlen(buffer), 0);
-  
-   
+
+
 
 
   /* Reception de donnees du serveur */
@@ -153,7 +153,7 @@ void PostData(char host[], int port, char file[], char data[]){
   /* Fermeture de la socket client */
   close(sock);
 
-  
+
 }
 
 
@@ -176,7 +176,7 @@ int main(void) {
   GetData(host,port,file);
 
 
-  
+
   char fich[100];
   printf("Endroit ou poster : ");
   scanf("%*[^\n]");
@@ -186,8 +186,6 @@ int main(void) {
   *pos = '\0';
   char data[] = "{\"data\":\"onche\"}";
   PostData(host,port,fich,data);
-  
+
   return EXIT_SUCCESS;
 }
-
-

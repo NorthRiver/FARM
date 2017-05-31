@@ -13,6 +13,6 @@ int main(int argc,char* args[]) {
 	}
 
 	cleanup();
-	
+
 	return 0;
 }

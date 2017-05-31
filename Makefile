@@ -8,7 +8,7 @@ EXEC=$(bin_dir)FARM.exe
 
 all: $(EXEC)
 
-$(bin_dir)FARM.exe: $(obj_dir)robot.o $(obj_dir)socket.o $(obj_dir)main.o
+$(bin_dir)FARM.exe: $(obj_dir)robot.o $(obj_dir)socket.o $(obj_dir)Sdl_init.o $(obj_dir)Sdl_fenetres.o $(obj_dir)Sdl_main.o
 	$(CC) -o $@ $^ $(LDFLAGS)
 
 $(obj_dir)%.o: $(src_dir)%.c
@@ -26,6 +26,6 @@ start:
 
 forceMaj:
 	git pull && make clean && make && make start
-	
+
 maj:
 	git pull && make && make start
