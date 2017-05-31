@@ -52,9 +52,9 @@ int menu(){
 
     int i, j;
     for (i = 0; i < 12; i++) {
-        cases.x = i * 31 + 76;
+        cases.x = i * 31 + 77;
         for (j = 0; j < 8; j++) {
-            cases.y = j * 31 + 76;
+            cases.y = j * 31 + 77;
             SDL_FillRect(screenSurface, &cases, SDL_MapRGB(screenSurface->format, 50, 23, 71));
         }
     }
