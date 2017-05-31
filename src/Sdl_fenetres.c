@@ -19,7 +19,7 @@ int menu(){
     SDL_BlitSurface(fond_ecran, NULL, screenSurface, &pos_fond_ecran);
     // Cadre grille
     SDL_Rect cadreGrille; SDL_Rect buttInv;
-    cadreGrille.x = 75; cadreGrille.y = 40; cadreGrille.w = 375; cadreGrille.h = 250;
+    cadreGrille.x = 40; cadreGrille.y = 75; cadreGrille.w = 375; cadreGrille.h = 250;
 
     SDL_FillRect(screenSurface, &cadreGrille, SDL_MapRGB(screenSurface->format, 32, 23, 71));
 
@@ -52,9 +52,9 @@ int menu(){
 
     int i, j;
     for (i = 0; i < 12; i++) {
-        cases.x = i * 30 + 15;
+        cases.x = i * 33;
         for (j = 0; j < 8; j++) {
-            cases.y = j * 30 + 15;
+            cases.y = j * 33;
             SDL_FillRect(screenSurface, &cases, SDL_MapRGB(screenSurface->format, 10, 23, 71));
         }
     }
