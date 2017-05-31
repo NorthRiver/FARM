@@ -19,7 +19,7 @@ int menu() {
 
 	// Cadre grille
 	SDL_Rect cadreGrille; SDL_Rect buttInv;
-	cadreGrille.x=40; cadreGrille.y=40; cadreGrille.w=400; cadreGrille.h=400;
+	cadreGrille.x=40; cadreGrille.y=40; cadreGrille.w=375; cadreGrille.h=250;
 
 	SDL_FillRect(screenSurface,&cadreGrille,SDL_MapRGB(screenSurface->format,32, 23, 71));
 
@@ -29,7 +29,7 @@ int menu() {
 
 	int larg = textMap->w;
 	int haut = textMap->h;
-	pos.x=cadreGrille.x + ((cadreGrille.w-larg)/2); pos.y=cadreGrille.y -30;
+	pos.x=cadreGrille.x + ((cadreGrille.w-larg)/2); pos.y=cadreGrille.y +5;
 	SDL_BlitSurface(textMap,NULL,screenSurface,&pos);
 
 	textScore = TTF_RenderUTF8_Blended(getpolice(), "Score", couleurBlanc);
