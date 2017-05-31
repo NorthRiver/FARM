@@ -3,7 +3,7 @@ bin_dir=bin/
 src_dir=src/
 CC=gcc
 CFLAGS=-Wall -lSDL2_image -lSDL2  -g
-LDFLAGS=`--cflags --libs` -lSDL2_ttf -lSDL2_gfx -g
+LDFLAGS=`sdl-config --libs` -lSDL2_ttf -lSDL2_gfx -g
 EXEC=$(bin_dir)FARM.exe
 
 all: $(EXEC)
