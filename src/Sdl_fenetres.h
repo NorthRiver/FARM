@@ -1,8 +1,5 @@
 #include <SDL2/SDL.h>
 #include <stdio.h>
-#include "ReconnaissanceV.h"
-#include "Stock.h"
-#include "Camera.h"
 #include "Sdl_init.h"
 
 
