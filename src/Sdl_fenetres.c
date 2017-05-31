@@ -7,6 +7,7 @@ int menu() {
 	SDL_Surface* screenSurface;
 	SDL_Surface* textMap;
 	SDL_Surface* textScore;
+	SDL_Surface* textTime;
 	SDL_Rect pos;
 
 	// Fond d'écran
@@ -51,7 +52,6 @@ int menu() {
 	SDL_Event event;
 	int loop = 1;
 	while(loop == 1) {
-		int x = -1; int y = -1;
 
 	    SDL_WaitEvent(&event);
 	    switch(event.type)
