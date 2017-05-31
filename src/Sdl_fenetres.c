@@ -51,10 +51,10 @@ int menu(){
     cases.x = 0; cases.y = 0; cases.w = 30; cases.h = 30;
 
     int i, j;
-    for (i = 0; i < 8; i++) {
-        cases.x = i * 30 + 5;
-        for (j = 0; j < 12; j++) {
-            cases.y = j * 30 + 5;
+    for (i = 0; i < 12; i++) {
+        cases.x = i * 30 + 15;
+        for (j = 0; j < 8; j++) {
+            cases.y = j * 30 + 15;
             SDL_FillRect(screenSurface, &cases, SDL_MapRGB(screenSurface->format, 10, 23, 71));
         }
     }
