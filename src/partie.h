@@ -1,6 +1,6 @@
 #include "robot.h"
 
-#define const NBJ 3;
+#define NBJ 3;
 /**
 * @struct Partie Contient toutes les infos des partie
 * @param scoreRouge Le score des rouges

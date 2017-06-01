@@ -1,6 +1,5 @@
 #include "partie.h"
 
-#define const NBJ 3;
 
 int getScoreRouge(Partie * p){
     return p->scoreRouge;
