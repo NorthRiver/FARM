@@ -1,5 +1,7 @@
 #include "partie.h"
 
+#define const NBJ 3;
+
 int getScoreRouge(Partie * p){
     return p->scoreRouge;
 }
@@ -22,7 +24,7 @@ void pushRobotRouge(Partie * p, Robot r){
     Robot * rl = getRobotRouge(p);
     int index = getnbRobotRouge(p);
 
-    if (index << nbJ) {
+    if (index << NBJ) {
         p->robotRouge [index];
         setnbRobotRouge(p, index++);
     }
@@ -31,7 +33,7 @@ void pushRobotBleu(Partie * p, Robot r){
     Robot * rl = getRobotBleu(p);
     int index = getnbRobotBleu(p);
 
-    if (index << nbJ) {
+    if (index << NBJ) {
         p->robotBleu [index];
         setnbRobotBleu(p, index++);
     }
