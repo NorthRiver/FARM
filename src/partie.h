@@ -1,4 +1,6 @@
 #include "robot.h"
+
+#define const nbJ 3;
 /**
 * @struct Partie Contient toutes les infos des partie
 * @param scoreRouge Le score des rouges
@@ -12,16 +14,22 @@ typedef struct PartieR
   int scoreRouge;
   int scoreBleu;
   int tempsRestant;
-  Robot robotRouge[3];
-  Robot robotBleu[3];
-
+  Robot robotRouge[nbJ];
+  int nbRobotRouge;
+  Robot robotBleu[nbJ];
+  int nbRobotBleu;
+  
 } Partie;
 
 int getScoreRouge(Partie * p);
-void setScoreRouge(Partie * p);
+void setScoreRouge(Partie * p, int val);
 int getScoreBleu(Partie * p);
-void setScoreBleu(Partie * p);
+void setScoreBleu(Partie * p, int val);
 Robot ** getRobotRouge(Partie * p);
 Robot ** getRobotBleu(Partie * p);
-void pushRobotRouge(Partie * p);
-void pushRobotBleu(Partie * p);
+void pushRobotRouge(Partie * p, Robot r);
+void pushRobotBleu(Partie * p, Robot r);
+int getnbRobotRouge(Partie * p);
+void setnbRobotRouge(Partie * p, int val);
+int getnbRobotBleu(Partie * p);
+void setnbRobotBleu(Partie * p, int val);
