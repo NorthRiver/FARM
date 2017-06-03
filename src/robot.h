@@ -25,7 +25,7 @@ typedef struct RobotJ
 /** @brief Get/Set
 * @param r Le robot
 * @return La position en X du robot
-*/
+*/ 
 int getPosX(Robot * r);
 
 /** @brief Get/Set
