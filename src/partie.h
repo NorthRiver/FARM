@@ -23,6 +23,8 @@ typedef struct PartieR
 
 int getScoreRouge(Partie * p);
 void setScoreRouge(Partie * p, int val);
+int getTemps(Partie * p);
+void setTemps(Partie * p, int val);
 int getScoreBleu(Partie * p);
 void setScoreBleu(Partie * p, int val);
 Robot ** getRobotRouge(Partie * p);

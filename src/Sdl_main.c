@@ -1,18 +1,22 @@
 #include "Sdl_main.h"
 
-int main(int argc,char* args[]) {
+int main(int argc, char* args[]) {
+    int menuSelect = 1;
 
-	int loop = 1;
+    init();
 
-	init();
 
-	while(loop==1){
 
-		loop = menu();
+    while (menuSelect != 0) {
+        if (menuSelect == 1) {
+            menuSelect = loading();
+        }
+        else if (menuSelect == 2) {
+            menuSelect = partie();
+        }
+    }
 
-	}
+    cleanup();
 
-	cleanup();
-
-	return 0;
+    return 0;
 }

@@ -13,6 +13,14 @@ int getScoreBleu(Partie * p){
 void setScoreBleu(Partie * p, int val){
     p->scoreBleu = val;
 }
+
+int getTemps(Partie * p){
+    return p->tempsRestant;
+}
+void setTemps(Partie * p, int val){
+    p->tempsRestant = val;
+}
+
 Robot ** getRobotRouge(Partie * p){
     return p->robotRouge;
 }
