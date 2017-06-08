@@ -131,6 +131,7 @@ int partie(){
     setBallon(&r, 0);
     printf("\n[\033[33mDEBUG\033[0m] Test b\n");
     setIp(&r, tok);
+    printf("%s", getIp(&r));
     printf("\n[\033[33mDEBUG\033[0m] Test b2\n");
     pushRobotRouge(laPartie, &r);
     printf("\n[\033[33mDEBUG\033[0m] Test b3\n");
