@@ -107,11 +107,13 @@ int partie(){
     setScoreBleu(laPartie, 0);
     setScoreRouge(laPartie, 0);
     setTemps(laPartie, 900); //15min
+    printf("TEst a");
     char * redTeamRaw = getRedTeam();
     char * blueTeamRaw = getBlueTeam();
     char *tok = strtok(redTeamRaw, "/");
     char *tok2 = strtok(blueTeamRaw, "/");
     Robot * r = malloc(sizeof(Robot));
+    printf("TEst b");
     setPosY(r, 0);
     setPosX(r, 0);
     setVerifiedPosY(r, 0);
