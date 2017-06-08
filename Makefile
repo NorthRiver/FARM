@@ -8,7 +8,7 @@ EXEC=$(bin_dir)FARM.exe
 
 all: $(EXEC)
 
-$(bin_dir)FARM.exe: $(obj_dir)robot.o $(obj_dir)socket.o $(obj_dir)Sdl_init.o $(obj_dir)Sdl_fenetres.o $(obj_dir)Sdl_main.o
+$(bin_dir)FARM.exe: $(obj_dir)robot.o $(obj_dir)socket.o $(obj_dir)Sdl_init.o $(obj_dir)Sdl_fenetres.o $(obj_dir)Sdl_main.o $(obj_dir)partie.o $(obj_dir)bebotte.o $(obj_dir)http.o
 	$(CC) -o $@ $^ $(LDFLAGS)
 
 $(obj_dir)%.o: $(src_dir)%.c
