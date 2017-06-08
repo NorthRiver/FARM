@@ -164,7 +164,7 @@ int partie(){
 
     printf("\n[\033[33mDEBUG\033[0m] Test b2\n");
     pushRobotRouge(laPartie, r1);
-    printf("%s", getIp(laPartie->robotRouge [0]));
+    //printf("%s", getIp(laPartie->robotRouge [0]));
     printf("\n[\033[33mDEBUG\033[0m] Test b3\n");
 
     printf("\n[\033[33mDEBUG\033[0m] Test b4 %s\n", pos1r);
