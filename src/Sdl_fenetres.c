@@ -108,6 +108,8 @@ int partie(){
     setScoreBleu(laPartie, 0);
     printf("Initialisation des score à 0 [\033[32mOK]\033[0m]\n");
     setScoreRouge(laPartie, 0);
+    setnbRobotRouge(laPartie, 3);
+    setnbRobotBlue(laPartie, 3);
     setTemps(laPartie, 300); //5min
     printf("Initilisation du temps à 5 min [\033[32mOK]\033[0m]\n");
     char * redTeamRaw = getRedTeam();
