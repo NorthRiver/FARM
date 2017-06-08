@@ -46,11 +46,10 @@ void postIsGameLaunch(bool partieLancee);
 
 //GET
 
-/** @brief Renvoi le nombre de nouveaux but marqués par l'équipe team
-* @param team 'r' si on veut le nb de nouveaux but de l'équipe rouge, 'b' pour la bleu
-* @return Le nombre de nouveaux buts
+/** @brief Renvoi l'adresse IP des robots ayant marques des buts depuis le debut de la partie separe par des '/'
+* @return Une liste d'ip
 */
-int newGoal(char team);
+char * getGoal();
 
 /** @brief Renvoi vrai si le nb de robot passé en parametre se sont déclarés sur la partie
 * @param nbRobot Le nombre de robot attendu dans la partie (default 6)

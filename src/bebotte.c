@@ -232,12 +232,12 @@ char * getBlueTeam(){
     return retour;
 }
 
-char * getGoal(long long *i){
+char * getGoal(){
     char * ress = "VB";
 
     strcat(ress, PARTIE);
     getBeebotte(ress, "but.txt");
-
+    long long i = 0;
     char * retour = parsage("but.txt", i, "type_msg=BUT");
     remove("but.txt");
     return retour;
@@ -264,7 +264,7 @@ char * getDB(long long *i){
 }
 
 
-int IsThereAllRobots(int i){
+int isThereAllRobots(int i){
     getBeebotte(PARTIE, "robot.txt");
     int retour = parsageAllRobots("robot.txt", 0, i);
     remove("robot.txt");
@@ -283,8 +283,8 @@ char * writeRobotPosition(char * ipRobot, int x, int y, int isVerified, int poss
     return result;
 }
 
-void PostRobotPosition(char * ipRobot, int x, int y, int isVerified, int possdeBallon, char team){
-    PostBeebotte(writeRobotPosition(ipRobot, x, y, isVerified, possdeBallon, team));
+void postRobotPosition(char * ipRobot, int x, int y, int isVerified, int possedeBallon, char team){
+    PostBeebotte(writeRobotPosition(ipRobot, x, y, isVerified, possedeBallon, team));
 }
 
 char * writeCurrentScore(int scoreRouge, int scoreBleu){
@@ -294,7 +294,7 @@ char * writeCurrentScore(int scoreRouge, int scoreBleu){
     return result;
 }
 
-void PostCurrentScore(int scoreRouge, int scoreBleu){
+void postCurrentScore(int scoreRouge, int scoreBleu){
     PostBeebotte(writeCurrentScore(scoreRouge, scoreBleu));
 }
 
@@ -305,8 +305,8 @@ char * writeTempsRestant(int temps){
     return result;
 }
 
-void PostTempsRestant(int temps){
-    PostBeebotte(writeTempsRestant(temps));
+void postTempsRestant(int tempsRestantEnSeconde){
+    PostBeebotte(writeTempsRestant(tempsRestantEnSeconde));
 }
 
 char * writePartieLancee(int partieLancee){
@@ -316,7 +316,7 @@ char * writePartieLancee(int partieLancee){
     return result;
 }
 
-void PostPartieLancee(int partieLancee){
+void PostIsGameLaunch(int partieLancee){
     PostBeebotte(writePartieLancee(partieLancee));
 }
 
@@ -519,37 +519,3 @@ void PostData(char host[], int port, char file[], char data[]){
     /* Fermeture de la socket client */
     close(sock);
 }
-
-
-int main(void) {
-    /*
-     * char host[100];
-     * printf("Hote : ");
-     * fgets(host, 100, stdin);
-     * char *pos = strchr(host, '\n');
-     * pos = '\0';
-     * char file[100];
-     * printf("Fichier : ");
-     * fgets(file, 100, stdin);
-     * pos = strchr(file, '\n');
-     * pos = '\0';
-     * printf("Port : ");
-     * int port;
-     * scanf("%d", &port);
-     *
-     * //GetData(host,port,file);
-     * char data[] = "{\"data\":\"onche\"}";
-     * PostData(host,port,file,data);
-     */
-
-    printf("%s\n", getRedTeam());
-    //printf("%i",IsThereAllRobots(2));
-
-
-    //PostPartieLancee(1);
-    //sleep(10);
-    //PostPartieLancee(0);
-    //getBeebotte("testVB");
-
-    return EXIT_SUCCESS;
-}//main
