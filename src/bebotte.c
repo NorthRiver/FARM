@@ -96,6 +96,7 @@ char* parsage(char *fichier, long long * wts, char * expr){
             strcat(retour, s);
 
             strcat(retour, "/");
+            printf("%d\n", i);
         }
         //printf("%i\n", i);
         //printf("%s\n", rendered);
@@ -113,7 +114,7 @@ char* parsage(char *fichier, long long * wts, char * expr){
     sscanf(cJSON_Print(data), "%lld", wts);
     printf("%lld\n", *wts);
     if (strlen(retour) > 0) {
-        retour [strlen(retour) - 1] = 0;
+        retour [strlen(retour) - 1] = '\0';
     }
     //printf("%s\n",retour);
     return retour;
@@ -416,6 +417,7 @@ void GetData(char host[], int port, char file[], char * fichier){
             buffer2 [res] = '\0';
             fprintf(f, "%s", s + 4);
             printf("%s", s + 4);
+            fflush(stdout);
         }
         else if (res > 0) {
             buffer2 [res] = '\0';
