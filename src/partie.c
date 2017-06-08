@@ -36,7 +36,9 @@ void pushRobotRouge(Partie * p, Robot r){
         int index2 = getnbRobotRouge(p);
 
         printf("mon index apres : %d\n", index2);
-        p->robotRouge [index] = r;
+        Robot * leRobot = malloc(sizeof(Robot));
+        leRobot = r;
+        p->robotRouge [index] = leRobot;
     }
 }
 void pushRobotBleu(Partie * p, Robot r){
@@ -48,7 +50,9 @@ void pushRobotBleu(Partie * p, Robot r){
         int index2 = getnbRobotBleu(p);
 
         printf("mon index apres : %d\n", index2);
-        p->robotBleu [index] = r;
+        Robot * leRobot = malloc(sizeof(Robot));
+        leRobot = r;
+        p->robotBleu [index] = leRobot;
     }
 }
 int getnbRobotRouge(Partie * p){
