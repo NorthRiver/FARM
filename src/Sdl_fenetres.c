@@ -180,7 +180,7 @@ int partie(){
             //On met le robot rouge a jour
             char * res; Robot ** rbj = malloc(sizeof(Robot*) * 3);
             rbj = getRobotRouge(laPartie);
-            printf("[\033[33mDEBUG\033[0m] Demande d'acces au robot %s \n", getIp(rbj [k]));
+            printf("[\033[33mDEBUG\033[0m] Demande d'acces au robot %s %s \n", getIp(rbj [k]), getIp(rbj [k + 1]));
             res = socketRecupRobot(getIp(rbj [k]));
             char *tok = strtok(res, "/");
             tok = strtok(NULL, "/");
