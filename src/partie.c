@@ -53,7 +53,7 @@ int getnbRobotRouge(Partie * p){
     return p->nbRobotRouge;
 }
 void setnbRobotRouge(Partie * p, int val){
-    *(p->nbRobotRouge) = val;
+    p->nbRobotRouge = 4;
 }
 int getnbRobotBleu(Partie * p){
     return p->nbRobotBleu;
