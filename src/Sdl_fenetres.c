@@ -210,27 +210,26 @@ int partie(){
             char * res; Robot ** rbj = malloc(sizeof(Robot*) * 3);
             rbj = getRobotRouge(laPartie);
             printf("[\033[33mDEBUG\033[0m] Demande d'acces au robot %s %s \n", getIp(rbj [k]));
+
+
+
+            char * res; Robot ** rbj = getRobotRouge(laPartie);
             res = socketRecupRobot(getIp(rbj [k]));
-            printf("\n[\033[33mDEBUG\033[0m] Test 2\n");
-            char *tok = strtok(res, "/");
-            tok = strtok(NULL, "/");
-            char *posR = tok;
-            printf("\n[\033[33mDEBUG\033[0m] Test 3\n");
-            char * tokp = strtok(posR, "_");
+            char *ip = strtok(res, "/");
+            char * pos1a = strtok(NULL, "/");
+            char * pos1b = strtok(NULL, "/");
+
+            char * tokp = strtok(pos1a, "_");
             int px = atoi(tokp);
-            tokp = strtok(posR, "_");
-            printf("\n[\033[33mDEBUG\033[0m] Test 4\n");
+            tokp = strtok(NULL, "_");
             int py = atoi(tokp);
-            tokp = strtok(posR, "_");
+            tokp = strtok(NULL, "_");
             int b = atoi(tokp);
-            printf("\n[\033[33mDEBUG\033[0m] Test 5\n");
-            tok = strtok(NULL, "/");
             char *vPosR = strtok(tok, "_");
             int pvx = atoi(vPosR);
-            vPosR = strtok(posR, "_");
-            printf("\n[\033[33mDEBUG\033[0m] Test 6\n");
+            vPosR = strtok(NULL, "_");
             int pvy = atoi(vPosR);
-            printf("\n[\033[33mDEBUG\033[0m] Test 7\n");
+
             setPosX(rbj [k], px);
             setPosY(rbj [k], py);
             setVerifiedPosX(rbj [k], pvx);
@@ -240,20 +239,22 @@ int partie(){
 
             char * res2; Robot ** rbj2 = getRobotBleu(laPartie);
             res2 = socketRecupRobot(getIp(rbj2 [k]));
-            char *tok2 = strtok(res2, "/");
-            tok2 = strtok(NULL, "/");
-            char *posR2 = tok2;
-            char * tokp2 = strtok(posR2, "_");
+            char *ip2 = strtok(res2, "/");
+            char * pos1a2 = strtok(NULL, "/");
+            char * pos1b2 = strtok(NULL, "/");
+
+            char * tokp2 = strtok(pos1a2, "_");
             int px2 = atoi(tokp2);
-            tokp2 = strtok(posR2, "_");
+            tokp2 = strtok(NULL, "_");
             int py2 = atoi(tokp2);
-            tokp2 = strtok(posR2, "_");
+            tokp2 = strtok(NULL, "_");
             int b2 = atoi(tokp2);
-            tok2 = strtok(NULL, "/");
-            char *vPosR2 = strtok(tok2, "_");
+
+            char *vPosR2 = strtok(pos1b2, "_");
             int pvx2 = atoi(vPosR2);
-            vPosR2 = strtok(posR2, "_");
+            vPosR2 = strtok(NULL, "_");
             int pvy2 = atoi(vPosR2);
+
             setPosX(rbj2 [k], px2);
             setPosY(rbj2 [k], py2);
             setVerifiedPosX(rbj2 [k], pvx2);
