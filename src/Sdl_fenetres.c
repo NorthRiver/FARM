@@ -134,7 +134,7 @@ int partie(){
     setIp(r, tok2);
     pushRobotBleu(laPartie, r);
 // On est pret, on lance la partie
-    postIsGameLaunch(1);
+    isGameLaunch(1);
     clock_t temps;
 
     SDL_Event event;
