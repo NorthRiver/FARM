@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include <time.h>
 #include "Sdl_init.h"
+#include "partie.h"
 #include "bebotte.h"
 
 /**

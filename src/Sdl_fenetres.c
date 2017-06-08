@@ -1,5 +1,5 @@
 #include "Sdl_fenetres.h"
-#include "partie.h"
+
 
 
 // ---- FONCTIONS ---- //
