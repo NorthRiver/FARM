@@ -133,25 +133,25 @@ int partie(){
     setIp(&r, tok);
 
     printf("\n[\033[33mDEBUG\033[0m] Test b2\n");
-    pushRobotRouge(laPartie, &r);
+    pushRobotRouge(laPartie, r);
     printf("%s", getIp(laPartie->robotRouge [0]));
     printf("\n[\033[33mDEBUG\033[0m] Test b3\n");
 
     printf("\n[\033[33mDEBUG\033[0m] Test b4 %s\n", pos1r);
     setIp(&r, pos1r);
     printf("\n[\033[33mDEBUG\033[0m] Test c\n");
-    pushRobotRouge(laPartie, &r);
+    pushRobotRouge(laPartie, r);
     setIp(&r, pos2r);
-    pushRobotRouge(laPartie, &r);
+    pushRobotRouge(laPartie, r);
     printf("\n[\033[33mDEBUG\033[0m] Test d%s\n", pos2r);
     setIp(&r, tok2);
-    pushRobotBleu(laPartie, &r);
+    pushRobotBleu(laPartie, r);
     setIp(&r, pos1b);
     printf("\n[\033[33mDEBUG\033[0m] Test e\n");
-    pushRobotBleu(laPartie, &r);
+    pushRobotBleu(laPartie, r);
     printf("%s", getIp(laPartie->robotRouge [0]));
     setIp(&r, pos2b);
-    pushRobotBleu(laPartie, &r);
+    pushRobotBleu(laPartie, r);
     printf("\n[\033[33mDEBUG\033[0m] Test f\n");
 // On est pret, on lance la partie
     postIsGameLaunch(1);

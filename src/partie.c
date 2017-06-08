@@ -22,12 +22,12 @@ void setTemps(Partie * p, int val){
 }
 
 Robot ** getRobotRouge(Partie * p){
-    return &(p->robotRouge);
+    return p->robotRouge;
 }
 Robot ** getRobotBleu(Partie * p){
-    return &(p->robotBleu);
+    return p->robotBleu;
 }
-void pushRobotRouge(Partie * p, Robot * r){
+void pushRobotRouge(Partie * p, Robot r){
     int index = getnbRobotRouge(p);
 
     printf("mon index avant : %d\n", index);
@@ -39,7 +39,7 @@ void pushRobotRouge(Partie * p, Robot * r){
         p->robotRouge [index] = r;
     }
 }
-void pushRobotBleu(Partie * p, Robot * r){
+void pushRobotBleu(Partie * p, Robot r){
     int index = getnbRobotBleu(p);
 
     printf("mon index avant : %d\n", index);
