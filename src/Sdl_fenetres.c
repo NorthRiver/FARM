@@ -47,59 +47,59 @@ int loading(){
 }
 
 int partie(){
-    SDL_Surface *screenSurface;
-    SDL_Surface *textMap;
-    SDL_Surface *textScore;
-    SDL_Surface *textTime;
-    SDL_Rect pos;
-
-    // Fond d'écran
-    screenSurface = SDL_GetWindowSurface(getwindow());
-    SDL_Surface *fond_ecran = SDL_LoadBMP("data/images/fond_ecran.bmp");
-    SDL_Rect pos_fond_ecran;
-    pos_fond_ecran.x = 0; pos_fond_ecran.y = 0;
-    SDL_BlitSurface(fond_ecran, NULL, screenSurface, &pos_fond_ecran);
-    // Cadre grille
-    SDL_Rect cadreGrille;
-    cadreGrille.x = 75; cadreGrille.y = 75; cadreGrille.w = 375; cadreGrille.h = 250;
-
-    SDL_FillRect(screenSurface, &cadreGrille, SDL_MapRGB(screenSurface->format, 10, 0, 0));
-
-    // Texte
-    SDL_Color couleurBlanc = { 255, 255, 255 };
-    textMap = TTF_RenderUTF8_Blended(getpolice(), "Map", couleurBlanc);
-
-    int larg = textMap->w;
-    pos.x = cadreGrille.x + ((cadreGrille.w - larg) / 2); pos.y = cadreGrille.y - 35;
-    SDL_BlitSurface(textMap, NULL, screenSurface, &pos);
-
-    textScore = TTF_RenderUTF8_Blended(getpolice(), "Score", couleurBlanc);
-
-    larg = textMap->w;
-    pos.x = pos.x + 370; pos.y = pos.y + 30;
-    SDL_BlitSurface(textScore, NULL, screenSurface, &pos);
-
-    textTime = TTF_RenderUTF8_Blended(getpolice(), "Time", couleurBlanc);
-
-    larg = textMap->w;
-    pos.y = pos.y + 180;
-    SDL_BlitSurface(textTime, NULL, screenSurface, &pos);
-
-//Placement des cases
-    SDL_Rect cases;
-
-    cases.x = 0; cases.y = 0; cases.w = 30; cases.h = 30;
-
-    int i, j;
-    for (i = 0; i < 12; i++) {
-        cases.x = i * 31 + 77;
-        for (j = 0; j < 8; j++) {
-            cases.y = j * 31 + 77;
-            SDL_FillRect(screenSurface, &cases, SDL_MapRGB(screenSurface->format, 50, 23, 71));
-        }
-    }
-
-    SDL_UpdateWindowSurface(getwindow());
+//     SDL_Surface *screenSurface;
+//     SDL_Surface *textMap;
+//     SDL_Surface *textScore;
+//     SDL_Surface *textTime;
+//     SDL_Rect pos;
+//
+//     // Fond d'écran
+//     screenSurface = SDL_GetWindowSurface(getwindow());
+//     SDL_Surface *fond_ecran = SDL_LoadBMP("data/images/fond_ecran.bmp");
+//     SDL_Rect pos_fond_ecran;
+//     pos_fond_ecran.x = 0; pos_fond_ecran.y = 0;
+//     SDL_BlitSurface(fond_ecran, NULL, screenSurface, &pos_fond_ecran);
+//     // Cadre grille
+//     SDL_Rect cadreGrille;
+//     cadreGrille.x = 75; cadreGrille.y = 75; cadreGrille.w = 375; cadreGrille.h = 250;
+//
+//     SDL_FillRect(screenSurface, &cadreGrille, SDL_MapRGB(screenSurface->format, 10, 0, 0));
+//
+//     // Texte
+//     SDL_Color couleurBlanc = { 255, 255, 255 };
+//     textMap = TTF_RenderUTF8_Blended(getpolice(), "Map", couleurBlanc);
+//
+//     int larg = textMap->w;
+//     pos.x = cadreGrille.x + ((cadreGrille.w - larg) / 2); pos.y = cadreGrille.y - 35;
+//     SDL_BlitSurface(textMap, NULL, screenSurface, &pos);
+//
+//     textScore = TTF_RenderUTF8_Blended(getpolice(), "Score", couleurBlanc);
+//
+//     larg = textMap->w;
+//     pos.x = pos.x + 370; pos.y = pos.y + 30;
+//     SDL_BlitSurface(textScore, NULL, screenSurface, &pos);
+//
+//     textTime = TTF_RenderUTF8_Blended(getpolice(), "Time", couleurBlanc);
+//
+//     larg = textMap->w;
+//     pos.y = pos.y + 180;
+//     SDL_BlitSurface(textTime, NULL, screenSurface, &pos);
+//
+// //Placement des cases
+//     SDL_Rect cases;
+//
+//     cases.x = 0; cases.y = 0; cases.w = 30; cases.h = 30;
+//
+//     int i, j;
+//     for (i = 0; i < 12; i++) {
+//         cases.x = i * 31 + 77;
+//         for (j = 0; j < 8; j++) {
+//             cases.y = j * 31 + 77;
+//             SDL_FillRect(screenSurface, &cases, SDL_MapRGB(screenSurface->format, 50, 23, 71));
+//         }
+//     }
+//
+//     SDL_UpdateWindowSurface(getwindow());
 
 // //On initialise la partie et les robots
 //
