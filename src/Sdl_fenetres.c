@@ -195,4 +195,5 @@ int partie(){
 //
 //     printf("\nErreur, sortie de boucle non-désirée (fonction menu())");
 //     return -1;
+    return 0;
 }
