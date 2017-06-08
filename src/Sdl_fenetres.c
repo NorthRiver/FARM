@@ -223,7 +223,7 @@ int partie(){
             printf("\n[\033[33mDEBUG\033[0m] Test 3\n");
             tokp = strtok(NULL, "_");
             int b = atoi(tokp);
-            char *vPosR = strtok(tok, "_");
+            char *vPosR = strtok(pos1b, "_");
             printf("\n[\033[33mDEBUG\033[0m] Mon tok %s", vPosR);
             int pvx = atoi(vPosR);
             printf("\n[\033[33mDEBUG\033[0m] Test 4\n");
