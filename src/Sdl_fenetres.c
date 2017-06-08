@@ -113,7 +113,7 @@ int partie(){
     char * redTeamRaw = getRedTeam();
     char * blueTeamRaw = getBlueTeam();
     char *tok = strtok(redTeamRaw, "/");
-    printf("\033[33m redTeam %s \033[0m\n", tok);
+    printf("\033[33m redTeam %s \033[0m\n", &tok);
     char *tok2 = strtok(blueTeamRaw, "/");
     Robot * r = malloc(sizeof(Robot));
     printf("\n\033[33m Test a\033[0m\n");
