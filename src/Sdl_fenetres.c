@@ -117,7 +117,11 @@ int partie(){
     printf("[\033[33mDEBUG\033[0m] RedTeam %s\n", redTeamRaw);
     printf("[\033[33mDEBUG\033[0m] BlueTeam %s\n", blueTeamRaw);
     char *tok = strtok(redTeamRaw, "/");
+    char * pos1r = strtok(NULL, "/");
+    char * pos2r = strtok(NULL, "/");
     char *tok2 = strtok(blueTeamRaw, "/");
+    char * pos1b = strtok(NULL, "/");
+    char * pos2b = strtok(NULL, "/");
     Robot * r = malloc(sizeof(Robot));
     printf("\n[\033[33mDEBUG\033[0m] Test a\n");
     setPosY(r, 0);
@@ -131,23 +135,19 @@ int partie(){
     pushRobotRouge(laPartie, r);
     printf("\n[\033[33mDEBUG\033[0m] Test b3\n");
 
-    tok = strtok(tok, "/");
-    printf("\n[\033[33mDEBUG\033[0m] Test b4 %s\n", tok);
-    setIp(r, tok);
+    printf("\n[\033[33mDEBUG\033[0m] Test b4 %s\n", pos1r);
+    setIp(r, pos1r);
     printf("\n[\033[33mDEBUG\033[0m] Test c\n");
     pushRobotRouge(laPartie, r);
-    tok = strtok(tok, "/");
-    setIp(r, tok);
+    setIp(r, pos2r);
     pushRobotRouge(laPartie, r);
-    printf("\n[\033[33mDEBUG\033[0m] Test d%s\n", tok);
+    printf("\n[\033[33mDEBUG\033[0m] Test d%s\n", pos2r);
     setIp(r, tok2);
     pushRobotBleu(laPartie, r);
-    tok2 = strtok(NULL, "/");
-    setIp(r, tok2);
+    setIp(r, pos1b);
     printf("\n[\033[33mDEBUG\033[0m] Test e\n");
     pushRobotBleu(laPartie, r);
-    tok2 = strtok(NULL, "/");
-    setIp(r, tok2);
+    setIp(r, pos2b);
     pushRobotBleu(laPartie, r);
     printf("\n[\033[33mDEBUG\033[0m] Test f\n");
 // On est pret, on lance la partie
