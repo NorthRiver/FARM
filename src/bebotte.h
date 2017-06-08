@@ -55,7 +55,7 @@ char * getGoal();
 * @param nbRobot Le nombre de robot attendu dans la partie (default 6)
 * @return True si ils sont tous la, faux sinon
 */
-int isThereAllTheRobots(int nbRobot);
+int isThereAllRobots(int nbRobot);
 
 /** @brief Retourne une chaine avec toutes les ips des robots de l'équipe rouge séparés par des '/'
 * @return Une liste d'ip

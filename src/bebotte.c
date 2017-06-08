@@ -276,9 +276,6 @@ int isThereAllRobots(int i){
 
 
 
-
-
-
 char * writeRobotPosition(char * ipRobot, int x, int y, int isVerified, int possdeBallon, char team){
     char *result = malloc(sizeof(char) * 200);
 
