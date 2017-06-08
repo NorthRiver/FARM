@@ -1,6 +1,4 @@
-# FARM
-Polytech Montpellier student project
-Projet Polytech - Informatique & gestion 3 - FARM (FAR Monitoring)
+# Projet Polytech - Informatique & gestion 3 - FARM (FAR Monitoring)
 
 Communication avec le serveur de but ainsi qu'avec les robots joueurs
 
