@@ -215,22 +215,25 @@ int partie(){
             char *ip = strtok(res, "/");
             char * pos1a = strtok(NULL, "/");
             char * pos1b = strtok(NULL, "/");
-
+            printf("\n[\033[33mDEBUG\033[0m] Test 2\n");
             char * tokp = strtok(pos1a, "_");
             int px = atoi(tokp);
             tokp = strtok(NULL, "_");
             int py = atoi(tokp);
+            printf("\n[\033[33mDEBUG\033[0m] Test 3\n");
             tokp = strtok(NULL, "_");
             int b = atoi(tokp);
             char *vPosR = strtok(tok, "_");
             int pvx = atoi(vPosR);
+            printf("\n[\033[33mDEBUG\033[0m] Test 4\n");
             vPosR = strtok(NULL, "_");
             int pvy = atoi(vPosR);
-
+            printf("\n[\033[33mDEBUG\033[0m] Test 5\n");
             setPosX(rbj [k], px);
             setPosY(rbj [k], py);
             setVerifiedPosX(rbj [k], pvx);
             setVerifiedPosY(rbj [k], pvy);
+            printf("\n[\033[33mDEBUG\033[0m] Test 6\n");
             setBallon(rbj [k], b);
             printf("\nMise à jour des robots rouges [\033[32mOK]\033[0m]\n");
 
