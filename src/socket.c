@@ -25,7 +25,7 @@ char * socketRecupRobot(char * ip) {
     sock = socket(AF_INET, SOCK_STREAM, 0);
 
     /* Configuration de la connexion */
-    printf("%s", ip)
+    printf("%s", ip);
     sin.sin_addr.s_addr = inet_addr(ip);
     sin.sin_family = AF_INET;
     sin.sin_port = htons(PORT);
