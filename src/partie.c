@@ -22,10 +22,10 @@ void setTemps(Partie * p, int val){
 }
 
 Robot ** getRobotRouge(Partie * p){
-    return p->robotRouge;
+    return p->robotRouge[];
 }
 Robot ** getRobotBleu(Partie * p){
-    return p->robotBleu;
+    return p->robotBleu[];
 }
 void pushRobotRouge(Partie * p, Robot * r){
     int index = getnbRobotRouge(p);
