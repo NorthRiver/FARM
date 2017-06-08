@@ -16,7 +16,6 @@
 #define PARTIE "partie1"
 #define TOKENPARTIE "1496910572272_aS7IrPZzKJEARkIm"
 
-
 int sock;
 void PostData(char host[], int port, char file[], char data[]);
 void PostBeebotte(char* message);
@@ -112,7 +111,7 @@ char* parsage(char *fichier, long long * wts, char * expr){
     //int retour;
 
     sscanf(cJSON_Print(data), "%lld", wts);
-    printf("%lld\n", *wts);
+    //printf("%lld\n", *wts);
     if (strlen(retour) > 0) {
         retour [strlen(retour) - 1] = '\0';
     }
@@ -354,7 +353,7 @@ void GetData(char host[], int port, char file[], char * fichier){
     if (hostinfo) {
         struct in_addr  **pptr;
         pptr = (struct in_addr **)hostinfo->h_addr_list;
-        printf("Adresse IP de l'hote : %s\n", inet_ntoa(**(pptr)));
+        //printf("Adresse IP de l'hote : %s\n",inet_ntoa(**(pptr)));
     }
 
 /*  if (hostinfo) {
@@ -385,8 +384,8 @@ void GetData(char host[], int port, char file[], char * fichier){
     /* Tentative de connexion au serveur */
     if (connect(sock, (struct sockaddr*)&sin, sizeof(sin)) < 0)
         Error("can't connect");
-    else printf("Connexion a %s sur le port %d\n", inet_ntoa(sin.sin_addr),
-            htons(sin.sin_port));
+    /*else printf("Connexion a %s sur le port %d\n", inet_ntoa(sin.sin_addr),
+     *     htons(sin.sin_port));*/
 
 
     //Envoi de donnees au serveur
@@ -397,7 +396,7 @@ void GetData(char host[], int port, char file[], char * fichier){
     strcat(buffer, "Host: ");
     strcat(buffer, host);
     strcat(buffer, "\r\n\r\n");
-    printf("Requete : \n%s", buffer);
+    //printf("Requete : \n%s", buffer);
 
     // TO DO : test whether this suceeds or Erorr("write error on socket")
     send(sock, buffer, strlen(buffer), 0);
@@ -416,12 +415,12 @@ void GetData(char host[], int port, char file[], char * fichier){
             // memmove(s, s+strlen("\r\n\r\n"),1+strlen(s+strlen("\r\n\r\n")));
             buffer2 [res] = '\0';
             fprintf(f, "%s", s + 4);
-            printf("%s", s + 4);
+            //printf("%s", s+4);
             fflush(stdout);
         }
         else if (res > 0) {
             buffer2 [res] = '\0';
-            printf("%s", buffer2);
+            //printf("%s", buffer2);
             fprintf(f, "%s", buffer2);
             fflush(stdout);
         }//if
@@ -449,7 +448,7 @@ void PostData(char host[], int port, char file[], char data[]){
     if (hostinfo) {
         struct in_addr  **pptr;
         pptr = (struct in_addr **)hostinfo->h_addr_list;
-        printf("Adresse IP de l'hote : %s\n", inet_ntoa(**(pptr)));
+        //printf("Adresse IP de l'hote : %s\n",inet_ntoa(**(pptr)));
     }
 
 /*  if (hostinfo) {
@@ -480,8 +479,8 @@ void PostData(char host[], int port, char file[], char data[]){
     /* Tentative de connexion au serveur */
     if (connect(sock, (struct sockaddr*)&sin, sizeof(sin)) < 0)
         Error("can't connect");
-    else printf("Connexion a %s sur le port %d\n", inet_ntoa(sin.sin_addr),
-            htons(sin.sin_port));
+    /*else printf("Connexion a %s sur le port %d\n", inet_ntoa(sin.sin_addr),
+     *     htons(sin.sin_port));*/
 
 
     //Envoi de donnees au serveur
@@ -501,7 +500,7 @@ void PostData(char host[], int port, char file[], char data[]){
     strcat(buffer, tailleData);
     strcat(buffer, "\r\n\r\n");
     strcat(buffer, data);
-    printf("Requete : \n%s", buffer);
+    //printf("Requete : \n%s", buffer);
 
     // TO DO : test whether this suceeds or Erorr("write error on socket")
     send(sock, buffer, strlen(buffer), 0);
@@ -516,7 +515,7 @@ void PostData(char host[], int port, char file[], char data[]){
         //printf(" res =%i \n", res);
         if (res > 0) {
             buffer2 [res] = '\0';
-            printf("%s", buffer2);
+            //printf("%s", buffer2);
             fflush(stdout);
         }//if
         else
