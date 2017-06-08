@@ -27,7 +27,7 @@ Robot ** getRobotRouge(Partie * p){
 Robot ** getRobotBleu(Partie * p){
     return p->robotBleu;
 }
-void pushRobotRouge(Partie * p, Robot r){
+void pushRobotRouge(Partie * p, Robot * r){
     int index = getnbRobotRouge(p);
 
     printf("mon index avant : %d\n", index);
@@ -36,12 +36,10 @@ void pushRobotRouge(Partie * p, Robot r){
         int index2 = getnbRobotRouge(p);
 
         printf("mon index apres : %d\n", index2);
-        Robot * leRobot = malloc(sizeof(Robot));
-        leRobot = r;
-        p->robotRouge [index] = leRobot;
+        p->robotRouge [index] = r;
     }
 }
-void pushRobotBleu(Partie * p, Robot r){
+void pushRobotBleu(Partie * p, Robot * r){
     int index = getnbRobotBleu(p);
 
     printf("mon index avant : %d\n", index);
@@ -50,9 +48,7 @@ void pushRobotBleu(Partie * p, Robot r){
         int index2 = getnbRobotBleu(p);
 
         printf("mon index apres : %d\n", index2);
-        Robot * leRobot = malloc(sizeof(Robot));
-        leRobot = r;
-        p->robotBleu [index] = leRobot;
+        p->robotBleu [index] = r;
     }
 }
 int getnbRobotRouge(Partie * p){

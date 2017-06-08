@@ -122,36 +122,66 @@ int partie(){
     char *tok2 = strtok(blueTeamRaw, "/");
     char * pos1b = strtok(NULL, "/");
     char * pos2b = strtok(NULL, "/");
-    Robot r;
+    Robot * r1 = malloc(sizeof(Robot)); Robot * r2 = malloc(sizeof(Robot)); Robot * r3 = malloc(sizeof(Robot)); Robot * r4 = malloc(sizeof(Robot)); Robot * r5 = malloc(sizeof(Robot)); Robot * r6 = malloc(sizeof(Robot));
     printf("\n[\033[33mDEBUG\033[0m] Test a\n");
-    setPosY(&r, 0);
-    setPosX(&r, 0);
-    setVerifiedPosY(&r, 0);
-    setVerifiedPosX(&r, 0);
-    setBallon(&r, 0);
+    setPosY(&r1, 0);
+    setPosX(&r1, 0);
+    setVerifiedPosY(&r1, 0);
+    setVerifiedPosX(&r1, 0);
+    setBallon(&r1, 0);
+
+    setPosY(&r2, 0);
+    setPosX(&r2, 0);
+    setVerifiedPosY(&r2, 0);
+    setVerifiedPosX(&r2, 0);
+    setBallon(&r2, 0);
+
+    setPosY(&r3, 0);
+    setPosX(&r3, 0);
+    setVerifiedPosY(&r3, 0);
+    setVerifiedPosX(&r3, 0);
+    setBallon(&r3, 0);
+
+    setPosY(&r4, 0);
+    setPosX(&r4, 0);
+    setVerifiedPosY(&r4, 0);
+    setVerifiedPosX(&r4, 0);
+    setBallon(&r4, 0);
+
+    setPosY(&r5, 0);
+    setPosX(&r5, 0);
+    setVerifiedPosY(&r5, 0);
+    setVerifiedPosX(&r5, 0);
+    setBallon(&r5, 0);
+
+    setPosY(&r6, 0);
+    setPosX(&r6, 0);
+    setVerifiedPosY(&r6, 0);
+    setVerifiedPosX(&r6, 0);
+    setBallon(&r6, 0);
     printf("\n[\033[33mDEBUG\033[0m] Test b\n");
-    setIp(&r, tok);
+    setIp(&r1, tok);
 
     printf("\n[\033[33mDEBUG\033[0m] Test b2\n");
-    pushRobotRouge(laPartie, r);
+    pushRobotRouge(laPartie, r1);
     printf("%s", getIp(laPartie->robotRouge [0]));
     printf("\n[\033[33mDEBUG\033[0m] Test b3\n");
 
     printf("\n[\033[33mDEBUG\033[0m] Test b4 %s\n", pos1r);
-    setIp(&r, pos1r);
+    setIp(&r2, pos1r);
     printf("\n[\033[33mDEBUG\033[0m] Test c\n");
-    pushRobotRouge(laPartie, r);
-    setIp(&r, pos2r);
-    pushRobotRouge(laPartie, r);
+    pushRobotRouge(laPartie, r2);
+    setIp(&r3, pos2r);
+    pushRobotRouge(laPartie, r3);
     printf("\n[\033[33mDEBUG\033[0m] Test d%s\n", pos2r);
-    setIp(&r, tok2);
-    pushRobotBleu(laPartie, r);
-    setIp(&r, pos1b);
+    setIp(&r4, tok2);
+    pushRobotBleu(laPartie, r4);
+    setIp(&r5, pos1b);
     printf("\n[\033[33mDEBUG\033[0m] Test e\n");
-    pushRobotBleu(laPartie, r);
+    pushRobotBleu(laPartie, r5);
     printf("%s", getIp(laPartie->robotRouge [0]));
-    setIp(&r, pos2b);
-    pushRobotBleu(laPartie, r);
+    setIp(&r6, pos2b);
+    pushRobotBleu(laPartie, r6);
     printf("\n[\033[33mDEBUG\033[0m] Test f\n");
 // On est pret, on lance la partie
     postIsGameLaunch(1);
