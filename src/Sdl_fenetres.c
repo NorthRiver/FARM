@@ -149,6 +149,7 @@ int partie(){
     setIp(&r, pos1b);
     printf("\n[\033[33mDEBUG\033[0m] Test e\n");
     pushRobotBleu(laPartie, &r);
+    printf("%s", getIp(laPartie->robotRouge [0]));
     setIp(&r, pos2b);
     pushRobotBleu(laPartie, &r);
     printf("\n[\033[33mDEBUG\033[0m] Test f\n");
@@ -179,7 +180,7 @@ int partie(){
             //On met le robot rouge a jour
             char * res; Robot ** rbj = malloc(sizeof(Robot*) * 3);
             rbj = getRobotRouge(laPartie);
-            printf("[\033[33mDEBUG\033[0m] Demande d'acces au robot %s", getIp(rbj [k]));
+            printf("[\033[33mDEBUG\033[0m] Demande d'acces au robot %s \n", getIp(rbj [k]));
             res = socketRecupRobot(getIp(rbj [k]));
             char *tok = strtok(res, "/");
             tok = strtok(NULL, "/");
