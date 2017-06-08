@@ -13,7 +13,7 @@
 #include "bebotte.h"
 #include "cJSON.h"
 
-#define PARTIE "partie1"
+#define PARTIE "partie0"
 #define TOKENPARTIE "1494793564147_KNl54g97mG89kQSZ"
 
 
