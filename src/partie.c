@@ -51,7 +51,7 @@ void pushRobotBleu(Partie * p, Robot * r){
     }
 }
 int getnbRobotRouge(Partie * p){
-    return p.nbRobotRouge;
+    return p->nbRobotRouge;
 }
 void setnbRobotRouge(Partie * p, int val){
     p->nbRobotRouge = val;
