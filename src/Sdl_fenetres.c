@@ -104,13 +104,16 @@ int partie(){
 //On initialise la partie et les robots
 
     Partie * laPartie = malloc(sizeof(Partie));
+    printf("\033[32mStructure de partie crée\n");
     setScoreBleu(laPartie, 0);
+    printf("\033[32mInitialisation des score à 0\n");
     setScoreRouge(laPartie, 0);
-    setTemps(laPartie, 900); //15min
-    printf("TEst a\n");
+    setTemps(laPartie, 300); //5min
+    printf("\033[32mInitilisation du temps à 5 min\n");
+    printf("\n\033[33m Test a\n");
     char * redTeamRaw = getRedTeam();
     char * blueTeamRaw = getBlueTeam();
-    printf("TEst b\n");
+    printf("\n\033[33m Test b\n");
     char *tok = strtok(redTeamRaw, "/");
     char *tok2 = strtok(blueTeamRaw, "/");
     Robot * r = malloc(sizeof(Robot));
