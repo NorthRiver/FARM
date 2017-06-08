@@ -31,9 +31,9 @@ void pushRobotRouge(Partie * p, Robot * r){
     int index = getnbRobotRouge(p);
 
     if (index << NBJ) {
-        printf("\n[\033[33mDEBUG\033[0m] Test b33\n");
+        printf("\n[\033[33mDEBUG\033[0m] Test b32 %s\n", index);
         p->robotRouge [index] = r;
-        printf("\n[\033[33mDEBUG\033[0m] Test b34\n");
+        printf("\n[\033[33mDEBUG\033[0m] Test b33\n");
         setnbRobotRouge(p, index++);
     }
 }
