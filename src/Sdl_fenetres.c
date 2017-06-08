@@ -158,7 +158,6 @@ int partie(){
 
     SDL_Event event;
     int loop = 1;
-    printf("TEst 1");
     while (loop == 1) {// boucle du programme
         SDL_WaitEvent(&event);
         switch (event.type) {
@@ -175,7 +174,7 @@ int partie(){
         //On demande leur position aux robots
         int k = 0;
         for (k = 0; k < NBJ; k++) {
-            printf("TEst 3");
+            printf("[\033[33mDEBUG\033[0m] Demande d'acces au robot %d", getIp(rbj [k]));
             //On met le robot rouge a jour
             char * res; Robot ** rbj = getRobotRouge(laPartie);
             res = socketRecupRobot(getIp(rbj [k]));
