@@ -163,26 +163,48 @@ int partie(){
             //On met le robot rouge a jour
             char * res; Robot ** rbj = getRobotRouge(laPartie);
             res = socketRecupRobot(getIp(rbj [k]));
+            char *tok = strtok(res, "/");
+            tok = strtok(NULL, "/");
+            char *posR = tok;
+            char * tokp = strtok(posR, "_");
+            int px = atoi(tokp);
+            tokp = strtok(posR, "_");
+            int py = atoi(tokp);
+            tokp = strtok(posR, "_");
+            int b = atoi(tokp);
+            tok = strtok(NULL, "/");
+            char *vPosR = strtok(tok, "_");
+            int pvx = atoi(vPosR);
+            vPosR = strtok(posR, "_");
+            int pvy = atoi(vPosR);
+            setPosX(rbj [k], px);
+            setPosY(rbj [k], py);
+            setVerifiedPosX(rbj [k], pvx);
+            setVerifiedPosY(rbj [k], pvy);
+            setBallon(rbj [k], b);
 
-            // char *tok = strtok(res, "/");
-            // printf("ipRobot = %s\n", tok);
-            // char *ipR = tok;
-            //
-            // tok = strtok(NULL, "/");
-            // char *posR = tok;
-            // printf("position = %s\n", tok);
-            // char * tokp = strtok(posR, "_");
-            // //To do : passage du decoupage en int pour les fonction plus basses
-            // tok = strtok(NULL, "/");
-            // char *vPosR = tok;
-            // printf("positions verifiées = %s\n", tok);
 
-            // setPosX(rbj [k], px);
-            // setPosX(rbj [k], py);
-            // setPosX(rbj [k], pvx);
-            // setPosX(rbj [k], pvy);
-            // setBallon(rbj [k], b);
-            //To do dupliquer pour les bleux
+            char * res2; Robot ** rbj2 = getRobotBleu(laPartie);
+            res2 = socketRecupRobot(getIp(rbj2 [k]));
+            char *tok2 = strtok(res2, "/");
+            tok2 = strtok(NULL, "/");
+            char *posR2 = tok2;
+            char * tokp2 = strtok(posR2, "_");
+            int px2 = atoi(tokp2);
+            tokp2 = strtok(posR2, "_");
+            int py2 = atoi(tokp2);
+            tokp2 = strtok(posR2, "_");
+            int b2 = atoi(tokp2);
+            tok2 = strtok(NULL, "/");
+            char *vPosR2 = strtok(tok2, "_");
+            int pvx2 = atoi(vPosR2);
+            vPosR2 = strtok(posR2, "_");
+            int pvy2 = atoi(vPosR2);
+            setPosX(rbj2 [k], px2);
+            setPosY(rbj2 [k], py2);
+            setVerifiedPosX(rbj2 [k], pvx2);
+            setVerifiedPosY(rbj2 [k], pvy2);
+            setBallon(rbj2 [k], b2);
         }
         // on met a jour le score :
         //setScoreBleu(laPartie, getScoreBleu(laPartie) + newGoal('b'));
