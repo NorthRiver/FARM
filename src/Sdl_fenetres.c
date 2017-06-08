@@ -211,9 +211,6 @@ int partie(){
             rbj = getRobotRouge(laPartie);
             printf("[\033[33mDEBUG\033[0m] Demande d'acces au robot %s %s \n", getIp(rbj [k]));
 
-
-
-            char * res; Robot ** rbj = getRobotRouge(laPartie);
             res = socketRecupRobot(getIp(rbj [k]));
             char *ip = strtok(res, "/");
             char * pos1a = strtok(NULL, "/");
