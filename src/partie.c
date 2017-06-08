@@ -27,21 +27,19 @@ Robot ** getRobotRouge(Partie * p){
 Robot ** getRobotBleu(Partie * p){
     return p->robotBleu;
 }
-void pushRobotRouge(Partie * p, Robot r){
-    Robot * rl = getRobotRouge(p);
+void pushRobotRouge(Partie * p, Robot * r){
     int index = getnbRobotRouge(p);
 
     if (index << NBJ) {
-        p->robotRouge [index];
+        p->robotRouge [index] = r;
         setnbRobotRouge(p, index++);
     }
 }
-void pushRobotBleu(Partie * p, Robot r){
-    Robot * rl = getRobotBleu(p);
+void pushRobotBleu(Partie * p, Robot * r){
     int index = getnbRobotBleu(p);
 
     if (index << NBJ) {
-        p->robotBleu [index];
+        p->robotBleu [index] = r;
         setnbRobotBleu(p, index++);
     }
 }

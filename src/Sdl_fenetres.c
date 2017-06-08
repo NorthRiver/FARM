@@ -19,16 +19,14 @@ int loading(){
     SDL_Color couleurBlanc = { 255, 255, 255 };
     textMap = TTF_RenderUTF8_Blended(getpolice(), "En attente de joueurs", couleurBlanc);
 
-    int larg = textMap->w;
-    int haut = textMap->h;
-    pos.x = pos_fond_ecran.x + ((pos_fond_ecran.w - larg) / 2); pos.y = cadreGrille.y - 35;
+    pos.x = pos_fond_ecran.x + ((pos_fond_ecran.w - larg) / 2); pos.y = pos_fond_ecran.y - 35;
     SDL_BlitSurface(textMap, NULL, screenSurface, &pos);
 
 //Placement des cases
 
     SDL_Event event;
     int loop = 1;
-    bool allRobot = FALSE;
+    bool allRobot = 0;
     while (loop == 1 && !allRobot) {
         SDL_WaitEvent(&event);
         switch (event.type) {
@@ -138,7 +136,7 @@ int partie(){
     setIp(r, tok2);
     pushRobotBleu(laPartie, r);
 // On est pret, on lance la partie
-    postIsGameLaunch(TRUE);
+    postIsGameLaunch(1);
     clock_t temps;
 
     SDL_Event event;
@@ -191,7 +189,7 @@ int partie(){
         setTemps(getTemps(laPartie) - (temps / CLOCKS_PER_SEC));
         if (getTemps(laPartie) < 0) {
             //Partie finie, on le publie et on quite le programme
-            postIsGameLaunch(FALSE);
+            postIsGameLaunch(0);
             return 0;
         }
     }

@@ -1,10 +1,10 @@
 #include <SDL2/SDL.h>
 #include <stdio.h>
+#include <stdbool.h>
 #include <time.h>
 #include "Sdl_init.h"
 #include "partie.h"
-
-
+#include "bebotte.h"
 
 /**
 	@brief Affiche que la partie est en attengte de joueur pour démarrer
