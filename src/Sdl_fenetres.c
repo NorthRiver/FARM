@@ -122,7 +122,7 @@ int partie(){
     char *tok2 = strtok(blueTeamRaw, "/");
     char * pos1b = strtok(NULL, "/");
     char * pos2b = strtok(NULL, "/");
-    Robot r = malloc(sizeof(Robot));
+    Robot r;
     printf("\n[\033[33mDEBUG\033[0m] Test a\n");
     setPosY(&r, 0);
     setPosX(&r, 0);
