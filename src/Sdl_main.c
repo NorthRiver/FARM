@@ -4,7 +4,7 @@ int main(int argc, char* args[]) {
     int menuSelect = 2;
 
     init();
-
+    printf("test");
 
 
     while (menuSelect != 0) {
