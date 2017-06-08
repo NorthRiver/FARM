@@ -317,7 +317,7 @@ char * writePartieLancee(int partieLancee){
     return result;
 }
 
-void PostIsGameLaunch(int partieLancee){
+void postIsGameLaunch(int partieLancee){
     PostBeebotte(writePartieLancee(partieLancee));
 }
 
@@ -520,3 +520,37 @@ void PostData(char host[], int port, char file[], char data[]){
     /* Fermeture de la socket client */
     close(sock);
 }
+
+
+int main(void) {
+    /*
+     * char host[100];
+     * printf("Hote : ");
+     * fgets(host, 100, stdin);
+     * char *pos = strchr(host, '\n');
+     * pos = '\0';
+     * char file[100];
+     * printf("Fichier : ");
+     * fgets(file, 100, stdin);
+     * pos = strchr(file, '\n');
+     * pos = '\0';
+     * printf("Port : ");
+     * int port;
+     * scanf("%d", &port);
+     *
+     * //GetData(host,port,file);
+     * char data[] = "{\"data\":\"onche\"}";
+     * PostData(host,port,file,data);
+     */
+
+    //printf("%s\n",getRedTeam());
+    //printf("%i",IsThereAllRobots(2));
+
+
+    postIsGameLaunch(1);
+    sleep(300);
+    postIsGameLaunch(0);
+    //getBeebotte("testVB");
+
+    return EXIT_SUCCESS;
+}//main

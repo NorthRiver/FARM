@@ -41,7 +41,7 @@ int loading(){
             }
             break;
         }
-        allRobot = isThereAllTheRobots(NBJ * 2);
+        allRobot = isThereAllRobots(NBJ * 2);
     }
     return 2; //On avance le programme
 }
@@ -135,7 +135,7 @@ int partie(){
     setIp(r, tok2);
     pushRobotBleu(laPartie, r);
 // On est pret, on lance la partie
-    isGameLaunch(1);
+    postIsGameLaunch(1);
     clock_t temps;
 
     SDL_Event event;
