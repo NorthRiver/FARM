@@ -17,7 +17,6 @@
 #define TOKENPARTIE "1496910572272_aS7IrPZzKJEARkIm"
 
 
-
 int sock;
 void PostData(char host[], int port, char file[], char data[]);
 void PostBeebotte(char* message);
@@ -223,7 +222,7 @@ char * getRedTeam(){
     getBeebotte(PARTIE, "rouge.txt");
     long long i = 0;
     char * retour = parsage("rouge.txt", &i, "couleur=rouge");
-    //remove("rouge.txt");
+    remove("rouge.txt");
     //printf("%s\n",retour);
     return retour;
 }
@@ -231,7 +230,7 @@ char * getRedTeam(){
 char * getBlueTeam(){
     getBeebotte(PARTIE, "bleu.txt");
     long long i = 0;
-    char * retour = parsage("bleu.txt", 0, "couleur=bleu");
+    char * retour = parsage("bleu.txt", &i, "couleur=bleu");
     remove("bleu.txt");
     return retour;
 }
