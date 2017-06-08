@@ -12,7 +12,7 @@
 #include <errno.h>
 #include "parseurC/cJSON-master/cJSON.h"
 
-#define PARTIE "partie0"
+#define PARTIE "partie1"
 #define TOKENPARTIE "1494793564147_KNl54g97mG89kQSZ"
 
 
@@ -238,7 +238,7 @@ char * getGoal(){
     strcat(ress, PARTIE);
     getBeebotte(ress, "but.txt");
     long long i = 0;
-    char * retour = parsage("but.txt", i, "type_msg=BUT");
+    char * retour = parsage("but.txt", &i, "type_msg=BUT");
     remove("but.txt");
     return retour;
 }
@@ -519,3 +519,37 @@ void PostData(char host[], int port, char file[], char data[]){
     /* Fermeture de la socket client */
     close(sock);
 }
+
+
+int main(void) {
+    /*
+     * char host[100];
+     * printf("Hote : ");
+     * fgets(host, 100, stdin);
+     * char *pos = strchr(host, '\n');
+     * pos = '\0';
+     * char file[100];
+     * printf("Fichier : ");
+     * fgets(file, 100, stdin);
+     * pos = strchr(file, '\n');
+     * pos = '\0';
+     * printf("Port : ");
+     * int port;
+     * scanf("%d", &port);
+     *
+     * //GetData(host,port,file);
+     * char data[] = "{\"data\":\"onche\"}";
+     * PostData(host,port,file,data);
+     */
+
+    //printf("%s\n",getRedTeam());
+    //printf("%i",IsThereAllRobots(2));
+
+
+    PostIsGameLaunch(1);
+    sleep(300);
+    PostIsGameLaunch(0);
+    //getBeebotte("testVB");
+
+    return EXIT_SUCCESS;
+}//main
