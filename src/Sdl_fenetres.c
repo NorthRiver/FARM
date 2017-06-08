@@ -181,14 +181,14 @@ int partie(){
             //To do dupliquer pour les bleux
         }
         // on met a jour le score :
-        setScoreBleu(laPartie, getScoreBleu(laPartie) + newGoal('b'));
-        setScoreRouge(laPartie, getScoreRouge(laPartie) + newGoal('r'));
+        //setScoreBleu(laPartie, getScoreBleu(laPartie) + newGoal('b'));
+        //setScoreRouge(laPartie, getScoreRouge(laPartie) + newGoal('r'));
         postCurrentScore(getScoreRouge(laPartie), getScoreBleu(laPartie));
         //On met a jour le temps
         setTemps(laPartie, ((int)getTemps(laPartie) - (int)(temps / CLOCKS_PER_SEC)));
         if (getTemps(laPartie) < 0) {
             //Partie finie, on le publie et on quite le programme
-            isGameLaunch(0);
+            postIsGameLaunch(0);
             return 0;
         }
     }
