@@ -1,7 +1,7 @@
 #include "Sdl_main.h"
 
 int main(int argc, char* args[]) {
-    int menuSelect = 1;
+    int menuSelect = 2;
 
     init();
 

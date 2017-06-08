@@ -30,7 +30,6 @@ int loading(){
     int loop = 1;
     int allRobot = 0;
     while (loop == 1 && !allRobot) {
-        printf("test");
         SDL_WaitEvent(&event);
         switch (event.type) {
         case SDL_KEYDOWN:
