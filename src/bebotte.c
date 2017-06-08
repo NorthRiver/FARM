@@ -10,7 +10,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
-#include "cJSON.h"
+
 
 #define PARTIE "partie1"
 #define TOKENPARTIE "1494793564147_KNl54g97mG89kQSZ"
