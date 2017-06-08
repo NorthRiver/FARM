@@ -18,7 +18,7 @@
 
 
 
-nt sock;
+int sock;
 void PostData(char host[], int port, char file[], char data[]);
 void PostBeebotte(char* message);
 void GetData(char host[], int port, char file[], char fichier[]);
