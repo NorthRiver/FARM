@@ -160,26 +160,26 @@ int partie(){
     setVerifiedPosX(r6, 0);
     setBallon(r6, 0);
     printf("\n[\033[33mDEBUG\033[0m] Test b\n");
-    setIp(&r1, tok);
+    setIp(r1, tok);
 
     printf("\n[\033[33mDEBUG\033[0m] Test b2\n");
     pushRobotRouge(laPartie, r1);
     printf("\n[\033[33mDEBUG\033[0m] Test b3\n");
 
     printf("\n[\033[33mDEBUG\033[0m] Test b4 %s\n", pos1r);
-    setIp(&r2, pos1r);
+    setIp(r2, pos1r);
     printf("\n[\033[33mDEBUG\033[0m] Test c\n");
     pushRobotRouge(laPartie, r2);
-    setIp(&r3, pos2r);
+    setIp(r3, pos2r);
     pushRobotRouge(laPartie, r3);
     printf("\n[\033[33mDEBUG\033[0m] Test d%s\n", pos2r);
-    setIp(&r4, tok2);
+    setIp(r4, tok2);
     pushRobotBleu(laPartie, r4);
-    setIp(&r5, pos1b);
+    setIp(r5, pos1b);
     printf("\n[\033[33mDEBUG\033[0m] Test e\n");
     pushRobotBleu(laPartie, r5);
     printf("%s", getIp(r2));
-    setIp(&r6, pos2b);
+    setIp(r6, pos2b);
     pushRobotBleu(laPartie, r6);
     printf("\n[\033[33mDEBUG\033[0m] Test f\n");
 // On est pret, on lance la partie
