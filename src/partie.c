@@ -47,17 +47,13 @@ void pushRobotBleu(Partie * p, Robot * r){
 
         printf("mon index apres : %d\n", index2);
         p->robotBleu [index] = r;
-        setnbRobotBleu(p, index++);
-        index2 = getnbRobotBleu(p);
-
-        printf("mon index apres : %d\n", index2);
     }
 }
 int getnbRobotRouge(Partie * p){
     return p->nbRobotRouge;
 }
 void setnbRobotRouge(Partie * p, int val){
-    p->nbRobotRouge = val;
+    *(p->nbRobotRouge) = val;
 }
 int getnbRobotBleu(Partie * p){
     return p->nbRobotBleu;
