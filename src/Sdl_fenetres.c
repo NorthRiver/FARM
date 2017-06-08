@@ -1,4 +1,5 @@
 #include "Sdl_fenetres.h"
+#include "partie.h"
 
 
 // ---- FONCTIONS ---- //
@@ -184,10 +185,10 @@ int partie(){
         setScoreRouge(laPartie, getScoreRouge(laPartie) + newGoal('r'));
         postCurrentScore(getScoreRouge(laPartie), getScoreBleu(laPartie));
         //On met a jour le temps
-        setTemps(laPartie, (int)getTemps(laPartie) - (int)(temps / CLOCKS_PER_SEC));
+        setTemps(laPartie, ((int)getTemps(laPartie) - (int)(temps / CLOCKS_PER_SEC)));
         if (getTemps(laPartie) < 0) {
             //Partie finie, on le publie et on quite le programme
-            postIsGameLaunch(0);
+            isGameLaunch(0);
             return 0;
         }
     }
