@@ -81,7 +81,6 @@ int partie(){
     textTime = TTF_RenderUTF8_Blended(getpolice(), "Time", couleurBlanc);
 
     larg = textMap->w;
-    haut = textMap->h;
     pos.y = pos.y + 180;
     SDL_BlitSurface(textTime, NULL, screenSurface, &pos);
 
