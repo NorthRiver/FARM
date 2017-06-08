@@ -25,7 +25,7 @@ void sendBotte(char * nomBotte, char * data);
 * @param possedeBallon Vrai si le joueur dit avoir un ballon, false sinon
 * @param team 'r' si equipe rouge 'b' si bleu
 */
-void postRobotPosition(char * ipRobot, int x, int y, bool isVerified, bool possedeBallon, char team);
+void postRobotPosition(char * ipRobot, int x, int y, int isVerified, int possedeBallon, char team);
 
 /** @brief Poste le score actuel
 * @param scoreRouge Entier correspondant au score actuel des rouges
@@ -41,7 +41,7 @@ void postTempsRestant(int tempsRestantEnSeconde);
 /** @brief Envoi si la partie est lancé ou non
 * @param partieLancee Vrai si la partie a démarrée, faux sinon
 */
-void postIsGameLaunch(bool partieLancee);
+void postIsGameLaunch(int partieLancee);
 
 
 //GET
@@ -55,7 +55,7 @@ char * getGoal();
 * @param nbRobot Le nombre de robot attendu dans la partie (default 6)
 * @return True si ils sont tous la, faux sinon
 */
-bool isThereAllTheRobots(int nbRobot);
+int isThereAllTheRobots(int nbRobot);
 
 /** @brief Retourne une chaine avec toutes les ips des robots de l'équipe rouge séparés par des '/'
 * @return Une liste d'ip

@@ -28,7 +28,7 @@ int loading(){
 
     SDL_Event event;
     int loop = 1;
-    bool allRobot = 0;
+    int allRobot = 0;
     while (loop == 1 && !allRobot) {
         SDL_WaitEvent(&event);
         switch (event.type) {
