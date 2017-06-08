@@ -43,7 +43,7 @@ void pushRobotBleu(Partie * p, Robot * r){
     printf("mon index avant : %d\n", index);
     if (index < NBJ) {
         setnbRobotBleu(p, getnbRobotBleu(p) + 1);
-        int index2 = getnbRobotRouge(p);
+        int index2 = getnbRobotBleu(p);
 
         printf("mon index apres : %d\n", index2);
         p->robotBleu [index] = r;
@@ -51,7 +51,7 @@ void pushRobotBleu(Partie * p, Robot * r){
     }
 }
 int getnbRobotRouge(Partie * p){
-    return p->nbRobotRouge;
+    return p.nbRobotRouge;
 }
 void setnbRobotRouge(Partie * p, int val){
     p->nbRobotRouge = val;
