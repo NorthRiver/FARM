@@ -101,98 +101,98 @@ int partie(){
 
     SDL_UpdateWindowSurface(getwindow());
 
-// //On initialise la partie et les robots
-//
-//     Partie * laPartie = malloc(sizeof(Partie));
-//     setScoreBleu(laPartie, 0);
-//     setScoreRouge(laPartie, 0);
-//     setTemps(laPartie, 900); //15min
-//     char * redTeamRaw = getRedTeam();
-//     char * blueTeamRaw = getBlueTeam();
-//     char *tok = strtok(redTeamRaw, "/");
-//     char *tok2 = strtok(blueTeamRaw, "/");
-//     Robot * r = malloc(sizeof(Robot));
-//     setPosY(r, 0);
-//     setPosX(r, 0);
-//     setVerifiedPosY(r, 0);
-//     setVerifiedPosX(r, 0);
-//     setBallon(r, 0);
-//     setIp(r, tok);
-//     pushRobotRouge(laPartie, r);
-//     tok = strtok(NULL, "/");
-//     setIp(r, tok);
-//     pushRobotRouge(laPartie, r);
-//     tok = strtok(NULL, "/");
-//     setIp(r, tok);
-//     pushRobotRouge(laPartie, r);
-//
-//     setIp(r, tok2);
-//     pushRobotBleu(laPartie, r);
-//     tok2 = strtok(NULL, "/");
-//     setIp(r, tok2);
-//     pushRobotBleu(laPartie, r);
-//     tok2 = strtok(NULL, "/");
-//     setIp(r, tok2);
-//     pushRobotBleu(laPartie, r);
-// // On est pret, on lance la partie
-//     postIsGameLaunch(1);
-//     clock_t temps;
-//
-//     SDL_Event event;
-//     int loop = 1;
-//     while (loop == 1) {// boucle du programme
-//         SDL_WaitEvent(&event);
-//         switch (event.type) {
-//         case SDL_KEYDOWN:
-//             switch (event.key.keysym.sym) {
-//             case SDLK_ESCAPE:
-//                 loop = 0;
-//                 return 0;
-//                 break;
-//             }
-//             break;
-//         }
-//
-//         //On demande leur position aux robots
-//         int k = 0;
-//         for (k = 0; k < NBJ; k++) {
-//             //On met le robot rouge a jour
-//             char * res; Robot ** rbj = getRobotRouge(laPartie);
-//             res = socketRecupRobot(getIp(rbj [k]));
-//
-//             // char *tok = strtok(res, "/");
-//             // printf("ipRobot = %s\n", tok);
-//             // char *ipR = tok;
-//             //
-//             // tok = strtok(NULL, "/");
-//             // char *posR = tok;
-//             // printf("position = %s\n", tok);
-//             // char * tokp = strtok(posR, "_");
-//             // //To do : passage du decoupage en int pour les fonction plus basses
-//             // tok = strtok(NULL, "/");
-//             // char *vPosR = tok;
-//             // printf("positions verifiées = %s\n", tok);
-//
-//             // setPosX(rbj [k], px);
-//             // setPosX(rbj [k], py);
-//             // setPosX(rbj [k], pvx);
-//             // setPosX(rbj [k], pvy);
-//             // setBallon(rbj [k], b);
-//             //To do dupliquer pour les bleux
-//         }
-//         // on met a jour le score :
-//         //setScoreBleu(laPartie, getScoreBleu(laPartie) + newGoal('b'));
-//         //setScoreRouge(laPartie, getScoreRouge(laPartie) + newGoal('r'));
-//         postCurrentScore(getScoreRouge(laPartie), getScoreBleu(laPartie));
-//         //On met a jour le temps
-//         setTemps(laPartie, ((int)getTemps(laPartie) - (int)(temps / CLOCKS_PER_SEC)));
-//         if (getTemps(laPartie) < 0) {
-//             //Partie finie, on le publie et on quite le programme
-//             postIsGameLaunch(0);
-//             return 0;
-//         }
-//     }
-//
-//     printf("\nErreur, sortie de boucle non-désirée (fonction menu())");
-//     return -1;
+//On initialise la partie et les robots
+
+    Partie * laPartie = malloc(sizeof(Partie));
+    setScoreBleu(laPartie, 0);
+    setScoreRouge(laPartie, 0);
+    setTemps(laPartie, 900); //15min
+    char * redTeamRaw = getRedTeam();
+    char * blueTeamRaw = getBlueTeam();
+    char *tok = strtok(redTeamRaw, "/");
+    char *tok2 = strtok(blueTeamRaw, "/");
+    Robot * r = malloc(sizeof(Robot));
+    setPosY(r, 0);
+    setPosX(r, 0);
+    setVerifiedPosY(r, 0);
+    setVerifiedPosX(r, 0);
+    setBallon(r, 0);
+    setIp(r, tok);
+    pushRobotRouge(laPartie, r);
+    tok = strtok(NULL, "/");
+    setIp(r, tok);
+    pushRobotRouge(laPartie, r);
+    tok = strtok(NULL, "/");
+    setIp(r, tok);
+    pushRobotRouge(laPartie, r);
+
+    setIp(r, tok2);
+    pushRobotBleu(laPartie, r);
+    tok2 = strtok(NULL, "/");
+    setIp(r, tok2);
+    pushRobotBleu(laPartie, r);
+    tok2 = strtok(NULL, "/");
+    setIp(r, tok2);
+    pushRobotBleu(laPartie, r);
+// On est pret, on lance la partie
+    postIsGameLaunch(1);
+    clock_t temps;
+
+    SDL_Event event;
+    int loop = 1;
+    while (loop == 1) {// boucle du programme
+        SDL_WaitEvent(&event);
+        switch (event.type) {
+        case SDL_KEYDOWN:
+            switch (event.key.keysym.sym) {
+            case SDLK_ESCAPE:
+                loop = 0;
+                return 0;
+                break;
+            }
+            break;
+        }
+
+        //On demande leur position aux robots
+        int k = 0;
+        for (k = 0; k < NBJ; k++) {
+            //On met le robot rouge a jour
+            char * res; Robot ** rbj = getRobotRouge(laPartie);
+            res = socketRecupRobot(getIp(rbj [k]));
+
+            // char *tok = strtok(res, "/");
+            // printf("ipRobot = %s\n", tok);
+            // char *ipR = tok;
+            //
+            // tok = strtok(NULL, "/");
+            // char *posR = tok;
+            // printf("position = %s\n", tok);
+            // char * tokp = strtok(posR, "_");
+            // //To do : passage du decoupage en int pour les fonction plus basses
+            // tok = strtok(NULL, "/");
+            // char *vPosR = tok;
+            // printf("positions verifiées = %s\n", tok);
+
+            // setPosX(rbj [k], px);
+            // setPosX(rbj [k], py);
+            // setPosX(rbj [k], pvx);
+            // setPosX(rbj [k], pvy);
+            // setBallon(rbj [k], b);
+            //To do dupliquer pour les bleux
+        }
+        // on met a jour le score :
+        //setScoreBleu(laPartie, getScoreBleu(laPartie) + newGoal('b'));
+        //setScoreRouge(laPartie, getScoreRouge(laPartie) + newGoal('r'));
+        postCurrentScore(getScoreRouge(laPartie), getScoreBleu(laPartie));
+        //On met a jour le temps
+        setTemps(laPartie, ((int)getTemps(laPartie) - (int)(temps / CLOCKS_PER_SEC)));
+        if (getTemps(laPartie) < 0) {
+            //Partie finie, on le publie et on quite le programme
+            postIsGameLaunch(0);
+            return 0;
+        }
+    }
+
+    printf("\nErreur, sortie de boucle non-désirée (fonction menu())");
+    return -1;
 }
