@@ -132,7 +132,7 @@ int partie(){
     printf("\n[\033[33mDEBUG\033[0m] Test b3\n");
 
     tok = strtok(NULL, "/");
-    printf("\n[\033[33mDEBUG\033[0m] Test b4\n");
+    printf("\n[\033[33mDEBUG\033[0m] Test b4 %s\n", tok);
     setIp(r, tok);
     printf("\n[\033[33mDEBUG\033[0m] Test c\n");
     pushRobotRouge(laPartie, r);
