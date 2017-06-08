@@ -123,7 +123,7 @@ int partie(){
     char * pos1b = strtok(NULL, "/");
     char * pos2b = strtok(NULL, "/");
     Robot * r1 = malloc(sizeof(Robot)); Robot * r2 = malloc(sizeof(Robot)); Robot * r3 = malloc(sizeof(Robot)); Robot * r4 = malloc(sizeof(Robot)); Robot * r5 = malloc(sizeof(Robot)); Robot * r6 = malloc(sizeof(Robot));
-    printf("\n[\033[33mDEBUG\033[0m] Test a\n");
+
     setPosY(r1, 0);
     setPosX(r1, 0);
     setVerifiedPosY(r1, 0);
@@ -159,34 +159,24 @@ int partie(){
     setVerifiedPosY(r6, 0);
     setVerifiedPosX(r6, 0);
     setBallon(r6, 0);
-    printf("\n[\033[33mDEBUG\033[0m] Test b\n");
     setIp(r1, tok);
 
-    printf("\n[\033[33mDEBUG\033[0m] Test b2\n");
     pushRobotRouge(laPartie, r1);
-    printf("\n[\033[33mDEBUG\033[0m] Test b3\n");
 
-    printf("\n[\033[33mDEBUG\033[0m] Test b4 %s\n", pos1r);
     setIp(r2, pos1r);
-    printf("\n[\033[33mDEBUG\033[0m] Test c\n");
     pushRobotRouge(laPartie, r2);
     setIp(r3, pos2r);
     pushRobotRouge(laPartie, r3);
-    printf("\n[\033[33mDEBUG\033[0m] Test d%s\n", pos2r);
     setIp(r4, tok2);
     pushRobotBleu(laPartie, r4);
     setIp(r5, pos1b);
-    printf("\n[\033[33mDEBUG\033[0m] Test e\n");
     pushRobotBleu(laPartie, r5);
     printf("%s", getIp(r2));
     setIp(r6, pos2b);
     pushRobotBleu(laPartie, r6);
-    printf("\n[\033[33mDEBUG\033[0m] Test f\n");
 // On est pret, on lance la partie
     postIsGameLaunch(1);
-    printf("\n[\033[33mDEBUG\033[0m] Test g\n");
     clock_t temps;
-    printf("\n[\033[33mDEBUG\033[0m] Test h\n");
 
     SDL_Event event;
     int loop = 1;
@@ -202,7 +192,7 @@ int partie(){
             }
             break;
         }
-        printf("\n[\033[33mDEBUG\033[0m] Test 1\n");
+
         //On demande leur position aux robots
         int k = 0;
         for (k = 0; k < NBJ; k++) {
@@ -215,26 +205,26 @@ int partie(){
             char *ip = strtok(res, "/");
             char * pos1a = strtok(NULL, "/");
             char * pos1b = strtok(NULL, "/");
-            printf("\n[\033[33mDEBUG\033[0m] Test 2\n");
+
             char * tokp = strtok(pos1a, "_");
             int px = atoi(tokp);
             tokp = strtok(NULL, "_");
             int py = atoi(tokp);
-            printf("\n[\033[33mDEBUG\033[0m] Test 3\n");
+
             tokp = strtok(NULL, "_");
             int b = atoi(tokp);
             char *vPosR = strtok(pos1b, "_");
             printf("\n[\033[33mDEBUG\033[0m] Mon tok %s", vPosR);
             int pvx = atoi(vPosR);
-            printf("\n[\033[33mDEBUG\033[0m] Test 4\n");
+
             vPosR = strtok(NULL, "_");
             int pvy = atoi(vPosR);
-            printf("\n[\033[33mDEBUG\033[0m] Test 5\n");
+
             setPosX(rbj [k], px);
             setPosY(rbj [k], py);
             setVerifiedPosX(rbj [k], pvx);
             setVerifiedPosY(rbj [k], pvy);
-            printf("\n[\033[33mDEBUG\033[0m] Test 6\n");
+
             setBallon(rbj [k], b);
             printf("\nMise à jour des robots rouges [\033[32mOK]\033[0m]\n");
 

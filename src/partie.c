@@ -30,24 +30,24 @@ Robot ** getRobotBleu(Partie * p){
 void pushRobotRouge(Partie * p, Robot * r){
     int index = getnbRobotRouge(p);
 
-    printf("mon index avant : %d\n", index);
+
     if (index < NBJ) {
         setnbRobotRouge(p, getnbRobotRouge(p) + 1);
         int index2 = getnbRobotRouge(p);
 
-        printf("mon index apres : %d\n", index2);
+
         p->robotRouge [index] = r;
     }
 }
 void pushRobotBleu(Partie * p, Robot * r){
     int index = getnbRobotBleu(p);
 
-    printf("mon index avant : %d\n", index);
+
     if (index < NBJ) {
         setnbRobotBleu(p, getnbRobotBleu(p) + 1);
         int index2 = getnbRobotBleu(p);
 
-        printf("mon index apres : %d\n", index2);
+
         p->robotBleu [index] = r;
     }
 }
