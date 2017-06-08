@@ -138,13 +138,17 @@ int partie(){
     pushRobotBleu(laPartie, r);
     tok2 = strtok(NULL, "/");
     setIp(r, tok2);
+    printf("\n[\033[33mDEBUG\033[0m] Test e\n");
     pushRobotBleu(laPartie, r);
     tok2 = strtok(NULL, "/");
     setIp(r, tok2);
     pushRobotBleu(laPartie, r);
+    printf("\n[\033[33mDEBUG\033[0m] Test f\n");
 // On est pret, on lance la partie
     postIsGameLaunch(1);
+    printf("\n[\033[33mDEBUG\033[0m] Test g\n");
     clock_t temps;
+    printf("\n[\033[33mDEBUG\033[0m] Test h\n");
 
     SDL_Event event;
     int loop = 1;
@@ -161,7 +165,7 @@ int partie(){
             }
             break;
         }
-        printf("TEst 2");
+        printf("\n[\033[33mDEBUG\033[0m] Test 1\n");
         //On demande leur position aux robots
         int k = 0;
         for (k = 0; k < NBJ; k++) {
