@@ -25,8 +25,7 @@ char * socketRecupRobot(char * ip) {
     sock = socket(AF_INET, SOCK_STREAM, 0);
 
     /* Configuration de la connexion */
-    printf("%s", "localhost");
-    sin.sin_addr.s_addr = inet_addr("localhost");
+    sin.sin_addr.s_addr = inet_addr("127.0.0.1");
     sin.sin_family = AF_INET;
     sin.sin_port = htons(PORT);
     printf("Tentative de connexion\n");
