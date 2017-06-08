@@ -124,41 +124,41 @@ int partie(){
     char * pos2b = strtok(NULL, "/");
     Robot * r1 = malloc(sizeof(Robot)); Robot * r2 = malloc(sizeof(Robot)); Robot * r3 = malloc(sizeof(Robot)); Robot * r4 = malloc(sizeof(Robot)); Robot * r5 = malloc(sizeof(Robot)); Robot * r6 = malloc(sizeof(Robot));
     printf("\n[\033[33mDEBUG\033[0m] Test a\n");
-    setPosY(&r1, 0);
-    setPosX(&r1, 0);
-    setVerifiedPosY(&r1, 0);
-    setVerifiedPosX(&r1, 0);
-    setBallon(&r1, 0);
+    setPosY(r1, 0);
+    setPosX(r1, 0);
+    setVerifiedPosY(r1, 0);
+    setVerifiedPosX(r1, 0);
+    setBallon(r1, 0);
 
-    setPosY(&r2, 0);
-    setPosX(&r2, 0);
-    setVerifiedPosY(&r2, 0);
-    setVerifiedPosX(&r2, 0);
-    setBallon(&r2, 0);
+    setPosY(r2, 0);
+    setPosX(r2, 0);
+    setVerifiedPosY(r2, 0);
+    setVerifiedPosX(r2, 0);
+    setBallon(r2, 0);
 
-    setPosY(&r3, 0);
-    setPosX(&r3, 0);
-    setVerifiedPosY(&r3, 0);
-    setVerifiedPosX(&r3, 0);
-    setBallon(&r3, 0);
+    setPosY(r3, 0);
+    setPosX(r3, 0);
+    setVerifiedPosY(r3, 0);
+    setVerifiedPosX(r3, 0);
+    setBallon(r3, 0);
 
-    setPosY(&r4, 0);
-    setPosX(&r4, 0);
-    setVerifiedPosY(&r4, 0);
-    setVerifiedPosX(&r4, 0);
-    setBallon(&r4, 0);
+    setPosY(r4, 0);
+    setPosX(r4, 0);
+    setVerifiedPosY(r4, 0);
+    setVerifiedPosX(r4, 0);
+    setBallon(r4, 0);
 
-    setPosY(&r5, 0);
-    setPosX(&r5, 0);
-    setVerifiedPosY(&r5, 0);
-    setVerifiedPosX(&r5, 0);
-    setBallon(&r5, 0);
+    setPosY(r5, 0);
+    setPosX(r5, 0);
+    setVerifiedPosY(r5, 0);
+    setVerifiedPosX(r5, 0);
+    setBallon(r5, 0);
 
-    setPosY(&r6, 0);
-    setPosX(&r6, 0);
-    setVerifiedPosY(&r6, 0);
-    setVerifiedPosX(&r6, 0);
-    setBallon(&r6, 0);
+    setPosY(r6, 0);
+    setPosX(r6, 0);
+    setVerifiedPosY(r6, 0);
+    setVerifiedPosX(r6, 0);
+    setBallon(r6, 0);
     printf("\n[\033[33mDEBUG\033[0m] Test b\n");
     setIp(&r1, tok);
 
