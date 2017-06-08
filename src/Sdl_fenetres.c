@@ -104,33 +104,34 @@ int partie(){
 //On initialise la partie et les robots
 
     Partie * laPartie = malloc(sizeof(Partie));
-    printf("\033[32mStructure de partie crée\033[0m\n");
+    printf("\nStructure de partie crée \033[32mOK\033[0m\n");
     setScoreBleu(laPartie, 0);
-    printf("\033[32mInitialisation des score à 0\033[0m\n");
+    printf("Initialisation des score à 0\033[32mOK\033[0m\n");
     setScoreRouge(laPartie, 0);
     setTemps(laPartie, 300); //5min
-    printf("\033[32mInitilisation du temps à 5 min\033[0m\n");
-    printf("\n\033[33m Test a\033[0m\n");
+    printf("Initilisation du temps à 5 min\033[32mOK\033[0m\n");
     char * redTeamRaw = getRedTeam();
     char * blueTeamRaw = getBlueTeam();
-    printf("\n\033[33m Test b\033[0m\n");
     char *tok = strtok(redTeamRaw, "/");
     char *tok2 = strtok(blueTeamRaw, "/");
     Robot * r = malloc(sizeof(Robot));
+    printf("\n\033[33m Test a\033[0m\n");
     setPosY(r, 0);
     setPosX(r, 0);
     setVerifiedPosY(r, 0);
     setVerifiedPosX(r, 0);
     setBallon(r, 0);
     setIp(r, tok);
+    printf("\n\033[33m Test b\033[0m\n");
+    pushRobotRouge(laPartie, r);
+    tok = strtok(NULL, "/");
+    setIp(r, tok);
+    printf("\n\033[33m Test c\033[0m\n");
     pushRobotRouge(laPartie, r);
     tok = strtok(NULL, "/");
     setIp(r, tok);
     pushRobotRouge(laPartie, r);
-    tok = strtok(NULL, "/");
-    setIp(r, tok);
-    pushRobotRouge(laPartie, r);
-
+    printf("\n\033[33m Test d\033[0m\n");
     setIp(r, tok2);
     pushRobotBleu(laPartie, r);
     tok2 = strtok(NULL, "/");
