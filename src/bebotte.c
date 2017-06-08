@@ -14,7 +14,7 @@
 #include "cJSON.h"
 
 #define PARTIE "partie1"
-#define TOKENPARTIE "1494793564147_KNl54g97mG89kQSZ"
+#define TOKENPARTIE "1496910572272_aS7IrPZzKJEARkIm"
 
 
 
@@ -79,28 +79,31 @@ char* parsage(char *fichier, long long * wts, char * expr){
         //printf("%s\n", rendered);
         ++i;
     }
-    char * retour = malloc(128);
+    char * retour = malloc(512);
 
 
     for (--i; i >= 0; --i) {
         char * s;
+        char * u;
         cJSON * elem = cJSON_GetArrayItem(root, i);
         cJSON * data = cJSON_GetObjectItemCaseSensitive(elem, "data");
         char *rendered = cJSON_Print(data);
-        if ((s = strstr(rendered, expr))) {
+        if ((s = strstr(rendered, expr)) && (u = strstr(rendered, "data="))) {
             s = strstr(rendered, "data=");
             s += 5;
             strtok(s, "\"");
             //printf("%s\n",s);
+
             strcat(retour, s);
+
             strcat(retour, "/");
         }
-
+        //printf("%i\n", i);
         //printf("%s\n", rendered);
     }
-    /*//printf("%s", *data);
-     *
-     */
+    //printf("%s", retour);
+
+
     cJSON * elem = cJSON_GetArrayItem(root, ++i);
     cJSON * data = cJSON_GetObjectItemCaseSensitive(elem, "wts");
 
@@ -409,7 +412,7 @@ void GetData(char host[], int port, char file[], char * fichier){
         int res = recv(sock, buffer2, sizeof(buffer2) - 1, 0);
         //printf(" res =%i \n", res);
         char * s;
-        if ((s = strstr(buffer2, "\r\n\r\n"))) {
+        if ((s = strstr(buffer2, "\r\n\r\n")) && (res != 0)) {
             // memmove(s, s+strlen("\r\n\r\n"),1+strlen(s+strlen("\r\n\r\n")));
             fprintf(f, "%s", s + 4);
         }
