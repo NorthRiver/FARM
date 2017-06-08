@@ -19,6 +19,7 @@ int loading(){
     SDL_Color couleurBlanc = { 255, 255, 255 };
     textMap = TTF_RenderUTF8_Blended(getpolice(), "En attente de joueurs", couleurBlanc);
 
+    int larg = textMap->w;
     pos.x = pos_fond_ecran.x + ((pos_fond_ecran.w - larg) / 2); pos.y = pos_fond_ecran.y - 35;
     SDL_BlitSurface(textMap, NULL, screenSurface, &pos);
 
@@ -158,27 +159,27 @@ int partie(){
         int k = 0;
         for (k = 0; k < NBJ; k++) {
             //On met le robot rouge a jour
-            char * res; Robot ** rbj = getRobotRouge;
+            char * res; Robot ** rbj = getRobotRouge(laPartie);
             res = socketRecupRobot(getIp(rbj [k]));
 
-            char *tok = strtok(res, "/");
-            printf("ipRobot = %s\n", tok);
-            char *ipR = tok;
+            // char *tok = strtok(res, "/");
+            // printf("ipRobot = %s\n", tok);
+            // char *ipR = tok;
+            //
+            // tok = strtok(NULL, "/");
+            // char *posR = tok;
+            // printf("position = %s\n", tok);
+            // char * tokp = strtok(posR, "_");
+            // //To do : passage du decoupage en int pour les fonction plus basses
+            // tok = strtok(NULL, "/");
+            // char *vPosR = tok;
+            // printf("positions verifiées = %s\n", tok);
 
-            tok = strtok(NULL, "/");
-            char *posR = tok;
-            printf("position = %s\n", tok);
-            char * tokp = strtok(posR, "_");
-            //To do : passage du decoupage en int pour les fonction plus basses
-            tok = strtok(NULL, "/");
-            char *vPosR = tok;
-            printf("positions verifiées = %s\n", tok);
-
-            setPosX(rbj [k], px);
-            setPosX(rbj [k], py);
-            setPosX(rbj [k], pvx);
-            setPosX(rbj [k], pvy);
-            setBallon(rbj [k], b);
+            // setPosX(rbj [k], px);
+            // setPosX(rbj [k], py);
+            // setPosX(rbj [k], pvx);
+            // setPosX(rbj [k], pvy);
+            // setBallon(rbj [k], b);
             //To do dupliquer pour les bleux
         }
         // on met a jour le score :
