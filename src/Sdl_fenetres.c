@@ -175,8 +175,9 @@ int partie(){
         int k = 0;
         for (k = 0; k < NBJ; k++) {
             //On met le robot rouge a jour
-            char * res; Robot * rbj [3] = getRobotRouge(laPartie);
-            printf("[\033[33mDEBUG\033[0m] Demande d'acces au robot %d", getIp(rbj [k]));
+            char * res; Robot ** rbj = malloc(sizeof(Robot*) * 3);
+            rbj = getRobotRouge(laPartie);
+            printf("[\033[33mDEBUG\033[0m] Demande d'acces au robot %s", getIp(rbj [k]));
             res = socketRecupRobot(getIp(rbj [k]));
             char *tok = strtok(res, "/");
             tok = strtok(NULL, "/");
