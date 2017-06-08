@@ -222,7 +222,7 @@ char * getRedTeam(){
     getBeebotte(PARTIE, "rouge.txt");
     long long i = 0;
     char * retour = parsage("rouge.txt", &i, "couleur=rouge");
-    remove("rouge.txt");
+    //remove("rouge.txt");
     //printf("%s\n",retour);
     return retour;
 }
@@ -405,7 +405,7 @@ void GetData(char host[], int port, char file[], char * fichier){
 
 
     /* Reception de donnees du serveur */
-    char buffer2 [1024];
+    char buffer2 [1024] = "";
     FILE *f = fopen(fichier, "w");
     for (;; ) {
         int res = recv(sock, buffer2, sizeof(buffer2) - 1, 0);
@@ -413,7 +413,9 @@ void GetData(char host[], int port, char file[], char * fichier){
         char * s;
         if ((s = strstr(buffer2, "\r\n\r\n")) && (res != 0)) {
             // memmove(s, s+strlen("\r\n\r\n"),1+strlen(s+strlen("\r\n\r\n")));
+            buffer2 [res] = '\0';
             fprintf(f, "%s", s + 4);
+            printf("%s", s + 4);
         }
         else if (res > 0) {
             buffer2 [res] = '\0';

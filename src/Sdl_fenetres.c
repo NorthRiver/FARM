@@ -104,12 +104,12 @@ int partie(){
 //On initialise la partie et les robots
 
     Partie * laPartie = malloc(sizeof(Partie));
-    printf("\nStructure de partie crée\033[32m OK\033[0m\n");
+    printf("\nStructure de partie crée [\033[32mOK]\033[0m]\n");
     setScoreBleu(laPartie, 0);
-    printf("Initialisation des score à 0\033[32m OK\033[0m\n");
+    printf("Initialisation des score à 0 [\033[32mOK]\033[0m]\n");
     setScoreRouge(laPartie, 0);
     setTemps(laPartie, 300); //5min
-    printf("Initilisation du temps à 5 min\033[32m OK\033[0m\n");
+    printf("Initilisation du temps à 5 min [\033[32mOK]\033[0m]\n");
     char * redTeamRaw = getRedTeam();
     char * blueTeamRaw = getBlueTeam();
     char *tok = strtok(redTeamRaw, "/");
@@ -192,7 +192,7 @@ int partie(){
             setVerifiedPosX(rbj [k], pvx);
             setVerifiedPosY(rbj [k], pvy);
             setBallon(rbj [k], b);
-
+            printf("\nMise à jour des robots rouges [\033[32mOK]\033[0m]\n");
 
             char * res2; Robot ** rbj2 = getRobotBleu(laPartie);
             res2 = socketRecupRobot(getIp(rbj2 [k]));
@@ -215,6 +215,7 @@ int partie(){
             setVerifiedPosX(rbj2 [k], pvx2);
             setVerifiedPosY(rbj2 [k], pvy2);
             setBallon(rbj2 [k], b2);
+            printf("\nMise à jour des robots bleu [\033[32mOK]\033[0m]\n");
         }
         // on met a jour le score :
         //setScoreBleu(laPartie, getScoreBleu(laPartie) + newGoal('b'));
