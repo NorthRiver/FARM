@@ -14,9 +14,9 @@ typedef struct PartieR
   int scoreRouge;
   int scoreBleu;
   int tempsRestant;
-  Robot robotRouge[NBJ];
+  Robot * robotRouge[NBJ];
   int nbRobotRouge;
-  Robot robotBleu[NBJ];
+  Robot * robotBleu[NBJ];
   int nbRobotBleu;
 
 } Partie;
