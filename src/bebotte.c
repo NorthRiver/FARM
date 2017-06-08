@@ -10,14 +10,14 @@
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
-
+#include "bebotte.h"
 
 #define PARTIE "partie1"
 #define TOKENPARTIE "1494793564147_KNl54g97mG89kQSZ"
 
 
 
-int sock;
+nt sock;
 void PostData(char host[], int port, char file[], char data[]);
 void PostBeebotte(char* message);
 void GetData(char host[], int port, char file[], char fichier[]);
