@@ -69,7 +69,6 @@ int partie(){
     textMap = TTF_RenderUTF8_Blended(getpolice(), "Map", couleurBlanc);
 
     int larg = textMap->w;
-    int haut = textMap->h;
     pos.x = cadreGrille.x + ((cadreGrille.w - larg) / 2); pos.y = cadreGrille.y - 35;
     SDL_BlitSurface(textMap, NULL, screenSurface, &pos);
 
@@ -187,7 +186,7 @@ int partie(){
         setScoreRouge(laPartie, getScoreRouge(laPartie) + newGoal('r'));
         postCurrentScore(getScoreRouge(laPartie), getScoreBleu(laPartie));
         //On met a jour le temps
-        setTemps(getTemps(laPartie) - (temps / CLOCKS_PER_SEC));
+        setTemps(laPartie, (int)getTemps(laPartie) - (int)(temps / CLOCKS_PER_SEC));
         if (getTemps(laPartie) < 0) {
             //Partie finie, on le publie et on quite le programme
             postIsGameLaunch(0);
