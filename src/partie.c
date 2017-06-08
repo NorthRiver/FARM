@@ -28,17 +28,14 @@ Robot ** getRobotBleu(Partie * p){
     return p->robotBleu;
 }
 void pushRobotRouge(Partie * p, Robot * r){
-    printf("\n[\033[33mDEBUG\033[0m] Test b31\n");
     int index = getnbRobotRouge(p);
-    printf("\n[\033[33mDEBUG\033[0m] Test b32\n");
+
     if (index << NBJ) {
         printf("\n[\033[33mDEBUG\033[0m] Test b33\n");
         p->robotRouge [index] = r;
         printf("\n[\033[33mDEBUG\033[0m] Test b34\n");
         setnbRobotRouge(p, index++);
-        printf("\n[\033[33mDEBUG\033[0m] Test b35\n");
     }
-    printf("\n[\033[33mDEBUG\033[0m] Test b36\n");
 }
 void pushRobotBleu(Partie * p, Robot * r){
     int index = getnbRobotBleu(p);
