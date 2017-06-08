@@ -75,7 +75,6 @@ int partie(){
     textScore = TTF_RenderUTF8_Blended(getpolice(), "Score", couleurBlanc);
 
     larg = textMap->w;
-    haut = textMap->h;
     pos.x = pos.x + 370; pos.y = pos.y + 30;
     SDL_BlitSurface(textScore, NULL, screenSurface, &pos);
 
