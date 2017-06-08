@@ -30,6 +30,7 @@ int loading(){
     int loop = 1;
     int allRobot = 0;
     while (loop == 1 && !allRobot) {
+        printf("test");
         SDL_WaitEvent(&event);
         switch (event.type) {
         case SDL_KEYDOWN:
@@ -85,21 +86,21 @@ int partie(){
 //     pos.y = pos.y + 180;
 //     SDL_BlitSurface(textTime, NULL, screenSurface, &pos);
 //
-// //Placement des cases
-//     SDL_Rect cases;
-//
-//     cases.x = 0; cases.y = 0; cases.w = 30; cases.h = 30;
-//
-//     int i, j;
-//     for (i = 0; i < 12; i++) {
-//         cases.x = i * 31 + 77;
-//         for (j = 0; j < 8; j++) {
-//             cases.y = j * 31 + 77;
-//             SDL_FillRect(screenSurface, &cases, SDL_MapRGB(screenSurface->format, 50, 23, 71));
-//         }
-//     }
-//
-//     SDL_UpdateWindowSurface(getwindow());
+//Placement des cases
+    SDL_Rect cases;
+
+    cases.x = 0; cases.y = 0; cases.w = 30; cases.h = 30;
+
+    int i, j;
+    for (i = 0; i < 12; i++) {
+        cases.x = i * 31 + 77;
+        for (j = 0; j < 8; j++) {
+            cases.y = j * 31 + 77;
+            SDL_FillRect(screenSurface, &cases, SDL_MapRGB(screenSurface->format, 50, 23, 71));
+        }
+    }
+
+    SDL_UpdateWindowSurface(getwindow());
 
 // //On initialise la partie et les robots
 //
@@ -195,5 +196,4 @@ int partie(){
 //
 //     printf("\nErreur, sortie de boucle non-désirée (fonction menu())");
 //     return -1;
-    return 0;
 }
