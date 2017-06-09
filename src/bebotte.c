@@ -13,8 +13,8 @@
 #include "bebotte.h"
 #include "cJSON.h"
 
-#define PARTIE "partie1"
-#define TOKENPARTIE "1496910572272_aS7IrPZzKJEARkIm"
+#define PARTIE "partie3"
+#define TOKENPARTIE "1496987903399_7yGKMem0d0kbWjEq"
 
 int sock;
 void PostData(char host[], int port, char file[], char data[]);
